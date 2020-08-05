@@ -5,15 +5,7 @@ A programming language similar to python which runs faster (removal of universal
 
 Algo to be written in Python, while Java will run the code in a custom editor.
 
-> Hehe
 
----
+- [ ] have done anything
 
-`import bruh 
-print("this is a test")`
-
-~~ignore this~~
-
-- [] have done anything
-
-- [x] not done anything
+write checklist like this @ThePyProgrammer
