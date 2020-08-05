@@ -9,12 +9,8 @@ Algo to be written in Python, while Java will run the code in a custom editor.
 
 ---
 
-`
-import bruh 
-
-print("this is a test")
-
-`
+`import bruh 
+print("this is a test")`
 
 ~~ignore this~~
 
