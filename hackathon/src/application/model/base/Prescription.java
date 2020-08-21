@@ -21,6 +21,10 @@ public class Prescription {
         this.doctor = doctor;
     }
 
+    public String getDoctorName() { return doctor.getName(); }
+
+    public String getClientName() { return client.getName(); }
+
     public Client getClient() {
         return client;
     }
