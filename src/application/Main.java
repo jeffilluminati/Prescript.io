@@ -19,7 +19,7 @@ public class Main extends Application {
     }
 
     public Scene loadDelivery() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view/delivery/delivery.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("application/view/delivery/delivery.fxml"));
         Scene scene = new Scene(root);
         // scene.getStylesheets().add(Main.class.getResource("view/delivery/style.css").toExternalForm());
         return scene;
