@@ -2,13 +2,9 @@ package application.model.delivery;
 
 import application.model.base.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class Deliverer extends Stakeholder {
-    /*
-    Prannaya, please do this file.
-     */
 
     private ArrayList<Prescription> deliveries;
 
