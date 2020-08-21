@@ -4,11 +4,11 @@ import application.model.patient.Patient;
 import application.model.doctor.Doctor;
 
 public class Prescription {
-    Doctor doctor; String prescription, target;
-    //Patient patient;
+    Doctor doctor; String target, prescription;
+    Patient patient;
     public Prescription(Doctor doctor, Patient patient, String prescription) {
         this.doctor = doctor;
-        //this.patient = patient;
+        this.patient = patient;
         this.prescription = prescription;
         this.target = patient.getAddress();
     }

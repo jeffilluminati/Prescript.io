@@ -26,7 +26,7 @@ public class Deliverer extends Stakeholder {
     }
 
     /*
-    format of each line in delivers.csv: <name>,<address>
+    format of each line in deliverers.csv: <name>,<address>
      */
 
     public static Deliverer parse(String str) {
@@ -39,5 +39,9 @@ public class Deliverer extends Stakeholder {
 
     public void markComplete(Prescription prescription) {
         deliveries.remove(prescription);
+    }
+
+    public ArrayList<Prescription> getDeliveries() {
+        return deliveries;
     }
 }

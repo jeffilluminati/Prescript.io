@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="border_pane"
-            maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1200.0"
-            xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="application.controller.delivery.DeliveryController" >
+<BorderPane fx:id="border_pane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.delivery.DeliveryController">
 
     <left>
-        <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+        <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" smooth="false">
 
@@ -22,186 +23,44 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </ImageView>
-                <Button contentDisplay="RIGHT" styleClass="sidebar-user-btn" text="Neutron Barley">
+                <Label fx:id="name" contentDisplay="RIGHT" styleClass="sidebar-user-btn" text="Neutron Barley">
                     <font>
                         <Font name="Calibri" size="14.0" />
                     </font>
-                </Button>
-                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                </Label>
+                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="238.0" styleClass="sidebar-buttons" text="Main" textFill="#b8b1b1">
                     <font>
-                        <Font name="Calibri Bold" size="14.0" />
+                        <Font name="Quicksand Regular" size="16.0" />
                     </font>
                     <padding>
-                        <Insets left="10.0" />
+                        <Insets bottom="10.0" left="30.0" top="10.0" />
                     </padding>
                     <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                     </VBox.margin>
-                </Label>
-                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="HOME" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="JOBS" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="RESUMES" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="TASK" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="CALENDER" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                </Button>
+                <Button layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-buttons" text="Admin" textFill="#b8b1b1">
                     <font>
-                        <Font name="Calibri Bold" size="14.0" />
+                        <Font name="Quicksand Regular" size="16.0" />
                     </font>
                     <padding>
-                        <Insets left="10.0" />
+                        <Insets left="30.0" />
                     </padding>
                     <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets bottom="10.0" top="10.0" />
                     </VBox.margin>
-                </Label>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="USERS" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="LOCATIONS" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="WORKFLOW" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="269.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="JOB BOARDS" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="304.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                    <padding>
-                        <Insets left="20.0" />
-                    </padding>
-                    <children>
-                        <Label text="SOCIAL" textFill="#b8b1b1">
-                            <font>
-                                <Font name="Consolas Bold" size="13.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="15.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
+                </Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-buttons" text="Settings" textFill="#b8b1b1">
+               <font>
+                  <Font name="Quicksand Regular" size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
             </children>
         </VBox>
     </left>
@@ -211,20 +70,20 @@
             <children>
                 <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="774.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@style.css">
                     <children>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="menu-bar-search-field-box" HBox.hgrow="ALWAYS">
-                            <children>
-                                <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                    <font>
-                                        <Font name="Calibri" size="16.0" />
-                                    </font>
-                                </TextField>
-                            </children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>
                             <padding>
                                 <Insets left="20.0" />
                             </padding>
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="582.0" text="Prescriptions:">
+                           <font>
+                              <Font name="Calibri Light" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
                         </HBox>
@@ -233,76 +92,16 @@
                         <Insets bottom="2.0" />
                     </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="774.0" style="-fx-background-color: #fff;">
+                <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="950.0" style="-fx-background-color: #fff;">
                     <children>
                         <VBox alignment="CENTER_LEFT">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
                             <children>
-                                <Label styleClass="lbl2" text="Customer Service Representative" textFill="#757373">
-                                    <font>
-                                        <Font name="Calibri Bold" size="28.0" />
-                                    </font>
-                                </Label>
-                                <HBox>
-                                    <children>
-                                        <Label styleClass="lbl2" text="San Francisco, CA" textFill="#757373">
-                                            <font>
-                                                <Font name="Calibri Bold" size="16.0" />
-                                            </font>
-                                        </Label>
-                                        <Label layoutX="10.0" layoutY="10.0" styleClass="lbl3" text="Preview this post" textFill="#00a1ff" underline="true">
-                                            <font>
-                                                <Font name="Calibri Bold" size="16.0" />
-                                            </font>
-                                            <HBox.margin>
-                                                <Insets left="20.0" />
-                                            </HBox.margin>
-                                        </Label>
-                                    </children>
-                                </HBox>
+                                <HBox />
                             </children>
                         </VBox>
-                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                            <children>
-                                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </Button>
-                            </children>
-                            <HBox.margin>
-                                <Insets left="20.0" />
-                            </HBox.margin>
-                        </HBox>
                     </children>
                     <VBox.margin>
                         <Insets />
@@ -311,66 +110,33 @@
                         <Insets bottom="10.0" top="10.0" />
                     </padding>
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="300.0" prefWidth="774.0" VBox.vgrow="ALWAYS">
-                    <children>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="150.0">
-                            <children>
-                                <ProgressIndicator layoutX="11.0" layoutY="8.0" prefHeight="134.0" prefWidth="129.0" />
-                                <Label layoutX="36.0" layoutY="75.0" styleClass="lbl3" text="Applicants">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label layoutX="50.0" layoutY="53.0" styleClass="lbl3" text="32,989">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="212.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="150.0">
-                            <children>
-                                <ProgressIndicator layoutX="11.0" layoutY="8.0" prefHeight="134.0" prefWidth="129.0" />
-                                <Label layoutX="36.0" layoutY="75.0" styleClass="lbl3" text="Interviews">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label layoutX="50.0" layoutY="53.0" styleClass="lbl3" text="17,887">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="507.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="150.0">
-                            <children>
-                                <ProgressIndicator layoutX="11.0" layoutY="8.0" prefHeight="134.0" prefWidth="129.0" />
-                                <Label layoutX="44.0" layoutY="75.0" styleClass="lbl3" text="Forward">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label layoutX="50.0" layoutY="53.0" styleClass="lbl3" text="11,560">
-                                    <font>
-                                        <Font name="Calibri Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2" text="Total - Out of 45,900 views">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                            <effect>
-                                <DropShadow color="#f2e3e3" />
-                            </effect>
-                        </Label>
-                    </children>
+                <HBox alignment="CENTER" prefHeight="534.0" prefWidth="950.0" VBox.vgrow="ALWAYS">
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
+               <children>
+                  <TableView fx:id="table" prefHeight="505.0" prefWidth="946.0">
+                    <columns>
+                      <TableColumn fx:id="doctors" minWidth="0.0" prefWidth="127.20001220703125" text="Doctor" />
+                        <TableColumn fx:id="patients" prefWidth="132.00003051757812" text="Patient" />
+                        <TableColumn fx:id="details" prefWidth="450.4000244140625" text="Prescription" />
+                        <TableColumn fx:id="locations" prefWidth="230.40008544921875" text="Location" />
+                    </columns>
+                  </TableView>
+               </children>
                 </HBox>
+            <ButtonBar prefHeight="93.0" prefWidth="950.0">
+              <buttons>
+                <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="298.0" style="-fx-background-color: #584D3A; -fx-text-fill: white;" styleClass="content-area-circle-btns" text="Mark As Complete">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                  </Button>
+              </buttons>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </ButtonBar>
             </children>
         </VBox>
     </center>
