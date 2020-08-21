@@ -31,7 +31,7 @@ public class ContentController implements Initializable {
     private void open_sidebar(ActionEvent event) throws IOException {
         BorderPane border_pane = (BorderPane) ((Node) event.getSource()).getScene().getRoot();
         if (flag == true) {
-            Parent sidebar = FXMLLoader.load(getClass().getResource("../../view/delivery/sidebar.fxml"));
+            Parent sidebar = FXMLLoader.load(ContentController.class.getResource("../../view/delivery/sidebar.fxml"));
             border_pane.setLeft(sidebar);
             flag = false;
         } else {
