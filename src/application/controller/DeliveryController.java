@@ -1,13 +1,12 @@
 package application.controller;
 
-import application.Main;
-import javafx.collections.ModifiableObservableListBase;
+import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.input.DragEvent;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -17,35 +16,84 @@ public class DeliveryController implements Initializable {
 
     @FXML AnchorPane win;
 
+    @FXML
+    private VBox pnItems = null;
+    @FXML
+    private Button btnOverview;
+
+    @FXML
+    private Button btnOrders;
+
+    @FXML
+    private Button btnCustomers;
+
+    @FXML
+    private Button btnMenus;
+
+    @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button btnSignout;
+
+    @FXML
+    private Pane pnlCustomer;
+
+    @FXML
+    private Pane pnlOrders;
+
+    @FXML
+    private Pane pnlOverview;
+
+    @FXML
+    private Pane pnlMenus;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Node[] nodes = new Node[10];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+
+                final int j = i;
+                nodes[i] = FXMLLoader.load(getClass().getResource("Item.fxml"));
+
+                //give the items some effect
+
+                nodes[i].setOnMouseEntered(event -> {
+                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                });
+                nodes[i].setOnMouseExited(event -> {
+                    nodes[j].setStyle("-fx-background-color : #02030A");
+                });
+                pnItems.getChildren().add(nodes[i]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
-    @FXML
-    public void winPress(MouseEvent event) {
-        xOffset = event.getSceneX();
-        yOffset = event.getSceneY();
+
+    public void handleClicks(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == btnCustomers) {
+            pnlCustomer.setStyle("-fx-background-color : #1620A1");
+            pnlCustomer.toFront();
+        }
+        if (actionEvent.getSource() == btnMenus) {
+            pnlMenus.setStyle("-fx-background-color : #53639F");
+            pnlMenus.toFront();
+        }
+        if (actionEvent.getSource() == btnOverview) {
+            pnlOverview.setStyle("-fx-background-color : #02030A");
+            pnlOverview.toFront();
+        }
+        if(actionEvent.getSource()==btnOrders)
+        {
+            pnlOrders.setStyle("-fx-background-color : #464F67");
+            pnlOrders.toFront();
+        }
     }
-
-    @FXML
-    public void winDrag(MouseEvent event) {
-        Main.stage.setX(event.getScreenX() - xOffset);
-        Main.stage.setY(event.getScreenY() - yOffset);
-        Main.stage.setOpacity(0.7f);
-
-    }
-
-    @FXML
-    public void winDragDone(DragEvent event) {
-        Main.stage.setOpacity(1.0f);
-    }
-
-    @FXML
-    public void winMouseReleased(MouseEvent event) {
-        Main.stage.setOpacity(1.0f);
-    }
-
-
 }
