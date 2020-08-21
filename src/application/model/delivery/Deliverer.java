@@ -12,13 +12,29 @@ public class Deliverer extends Stakeholder {
 
     private ArrayList<Prescription> deliveries;
 
-    public Deliverer(String name) {
-        super(name, "Deliverer");
+    public Deliverer(String name, String address) {
+        super(name, "Deliverer", address);
         deliveries = new ArrayList<>();
     }
 
     public Deliverer() {
-        this("");
+        this("", "");
+    }
+
+    private Deliverer(String[] args) {
+        this(args[0], args[1]);
+    }
+
+    public Deliverer(String str) {
+        this(str.split(",", 1));
+    }
+
+    /*
+    format of each line in delivers.csv: <name>,<address>
+     */
+
+    public static Deliverer parse(String str) {
+        return new Deliverer(str.split(",", 1));
     }
 
     public void addDeliveries(Prescription ...prescriptions) {
