@@ -12,10 +12,10 @@ import java.util.ArrayList;
 
 public class Doctor extends Stakeholder {
     private ArrayList<Patient> patientList;
+    private ArrayList<Prescription> prescriptions;
 
-    public Doctor(String name, ArrayList<Patient> patientList) {
+    public Doctor(String name) {
         super(name, "");
-        this.patientList = patientList;
     }
 
     public ArrayList<Patient> getPatientList() {
@@ -26,20 +26,41 @@ public class Doctor extends Stakeholder {
         this.patientList = patientList;
     }
 
-    public void saveToCsv(String filename) throws IOException {
-        PrintWriter output = new PrintWriter(filename);
-        output.printf("%s,%s", super.getName(), patientList.toString());
+    public ArrayList<Prescription> getPrescriptions() {
+        return prescriptions;
     }
 
-    public static Doctor loadFromCsv(String fileName) throws IOException{
-        String[] content = Files.readString(Paths.get("doctor.csv")).split(",");
-        ArrayList<Patient> patients = new ArrayList<>();
-        String doctorName = content[0];
+    public void setPrescriptions(ArrayList<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
+    }
 
-        for (int i = 1; i < content.length; i += 5) {
-            patients.add(new Patient(content[i], content[i + 1], content[i + 2], content[i + 3], content[i + 4]));
+    public void saveToCsv(String filename) {
+        try {
+            PrintWriter output = new PrintWriter(filename);
+            output.printf("%s,%s", super.getName(), patientList.toString());
+        } catch (IOException e) {
+            System.out.println("Error in writing to file: " + e.getMessage());
         }
+    }
 
-        return new Doctor(doctorName, patients);
+    public static Doctor loadFromCsv(String fileName) {
+        try {
+            String[] content = Files.readString(Paths.get("doctor.csv")).split(",");
+            ArrayList<Patient> patients = new ArrayList<>();
+            ArrayList<Prescription> prescriptions = new ArrayList<>();
+            String doctorName = content[0];
+            Doctor doctor = new Doctor(doctorName);
+
+            for (int i = 1; i < content.length; i += 4) {
+                patients.add(new Patient(content[i], content[i + 1], content[i + 2]));
+                prescriptions.add(new Prescription(doctor, patients.get(-1), content[i + 3]));
+            }
+
+            return doctor;
+
+        } catch (IOException e) {
+            System.out.println("Error in writing to file: " + e.getMessage());
+            return new Doctor("");
+        }
     }
 }

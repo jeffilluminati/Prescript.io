@@ -30,7 +30,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    private Deliverer genDeliverer() {
+    private Deliverer genDelivery() {
         Deliverer deliverer = new Deliverer("Mario,Blk 256, Super Mario Brothers District");
         Patient patient = new Patient("Bobby", "Rosyth School", "5768G");
         Patient[] arr = {patient};

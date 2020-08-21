@@ -46,6 +46,22 @@ public class Patient extends Stakeholder {
 
     }
 
+    public void setPrescriptions(ArrayList<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
+    }
+
+    public ArrayList<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(ArrayList<Doctor> doctors) {
+        this.doctors = doctors;
+    }
+
+    public void setIC(String IC) {
+        this.IC = IC;
+    }
+
     public String getIC() {
         return IC;
     }

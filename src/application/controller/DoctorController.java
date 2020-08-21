@@ -1,20 +1,13 @@
 package application.controller;
 
+import application.model.base.Prescription;
 import application.model.doctor.Doctor;
 import application.model.patient.Patient;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class DoctorController implements Initializable {
@@ -37,21 +30,16 @@ public class DoctorController implements Initializable {
     @FXML
     public Button deletePatientBtn;
     @FXML
-    public Button editPrescriptionButton;
-    @FXML
     public Button saveBtn;
     @FXML
     public TextField patientICTF;
 
     private Doctor doctor;
+    private int currentIndexOfPatient;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            doctor = Doctor.loadFromCsv("doctor.csv");
-        } catch (IOException e) {
-            System.out.println("Error in reading from file: " + e.getMessage());
-        }
+        doctor = Doctor.loadFromCsv("doctor.csv");
 
         for (Patient p: doctor.getPatientList()) {
             TitledPane pane = new TitledPane(p.getName(), new Label(""));
@@ -59,9 +47,8 @@ public class DoctorController implements Initializable {
                 patientNameTF.setText(p.getName());
                 patientICTF.setText(p.getIC());
                 addressTF.setText(p.getAddress());
-                prescriptionNameTF.setText(p.getPrescriptionName());
-                prescriptionDescriptionTF.setText(p.getPrescriptionDescription());
                 errorLabel.setText("");
+                currentIndexOfPatient = leftAccordion.getPanes().indexOf(pane);
             });
             leftAccordion.getPanes().add(pane);
         }
@@ -69,7 +56,9 @@ public class DoctorController implements Initializable {
 
     @FXML
     private boolean isAddModeEngaged = false;
-    public void onAddPatientBtn(ActionEvent actionEvent) {
+    public void onAddPatientBtn() {
+        checkIfOtherButtonIsEngaged();
+
         TitledPane pane = new TitledPane("", new Label(""));
 
         patientNameTF.setText(""); patientICTF.setText(""); addressTF.setText("");
@@ -82,6 +71,10 @@ public class DoctorController implements Initializable {
         
        
         saveBtn.setOnAction(e -> {
+
+            patientNameTF.setEditable(false); patientICTF.setEditable(false); addressTF.setEditable(false);
+            prescriptionNameTF.setEditable(false); prescriptionDescriptionTF.setEditable(false);
+
             String patientName = patientNameTF.getText();
             String patientIC = patientICTF.getText();
             String address = addressTF.getText();
@@ -90,39 +83,85 @@ public class DoctorController implements Initializable {
 
             pane.setAccessibleText(patientName);
             pane.setOnContextMenuRequested(event -> {
-                patientNameTF.setEditable(false); patientICTF.setEditable(false); addressTF.setEditable(false);
-                prescriptionNameTF.setEditable(false); prescriptionDescriptionTF.setEditable(false);
-
                 patientNameTF.setText(patientName);
                 patientICTF.setText(patientIC);
                 addressTF.setText(address);
                 prescriptionNameTF.setText(prescriptionName);
                 prescriptionDescriptionTF.setText(prescriptionDescription);
                 errorLabel.setText("");
+
+                currentIndexOfPatient = leftAccordion.getPanes().indexOf(pane);
             });
 
+            Patient p = new Patient(patientName, address, patientIC);
+            Prescription pp = new Prescription(doctor, p, prescriptionName + " : " + prescriptionDescription);
+            doctor.getPatientList().add(p);
+            doctor.getPrescriptions().add(pp);
+
+            doctor.saveToCsv("doctor.csv");
             isAddModeEngaged = false;
         });
 
     }
 
+    private boolean isEditModeEngaged = false;
     @FXML
-    public void onEditPatientBtn(ActionEvent actionEvent) {
+    public void onEditPatientBtn() {
+        if (checkIfOtherButtonIsEngaged())
+            return;
+        isEditModeEngaged = true;
 
+        patientNameTF.setEditable(true); patientICTF.setEditable(true); addressTF.setEditable(true);
+        prescriptionNameTF.setEditable(true); prescriptionDescriptionTF.setEditable(true);
+
+        saveBtn.setOnAction(e -> {
+
+            patientNameTF.setEditable(false); patientICTF.setEditable(false); addressTF.setEditable(false);
+            prescriptionNameTF.setEditable(false); prescriptionDescriptionTF.setEditable(false);
+
+            String patientName = patientNameTF.getText();
+            String patientIC = patientICTF.getText();
+            String address = addressTF.getText();
+            String prescriptionName = prescriptionNameTF.getText();
+            String prescriptionDescription = prescriptionDescriptionTF.getText();
+
+            doctor.getPatientList().get(this.currentIndexOfPatient).setName(patientName);
+            doctor.getPatientList().get(this.currentIndexOfPatient).setIC(patientIC);
+            doctor.getPatientList().get(this.currentIndexOfPatient).setAddress(address);
+            doctor.getPrescriptions().get(this.currentIndexOfPatient).setPrescription(
+                    prescriptionName + " : " + prescriptionDescription);
+
+            isEditModeEngaged = false;
+
+            doctor.saveToCsv("doctor.csv");
+
+        });
     }
 
     @FXML
-    public void onDeletePatientBtn(ActionEvent actionEvent) {
+    public void onDeletePatientBtn() {
+        if (checkIfOtherButtonIsEngaged())
+            return;
+
+        leftAccordion.getPanes().remove(this.currentIndexOfPatient);
+        doctor.getPatientList().remove(this.currentIndexOfPatient);
+        doctor.getPrescriptions().remove(this.currentIndexOfPatient);
+
+        patientNameTF.setText(""); patientICTF.setText(""); addressTF.setText("");
+        prescriptionNameTF.setText(""); prescriptionDescriptionTF.setText("");
+
+        errorLabel.setText("Please Select a Patient using the menu on the left or add a new patient");
 
     }
 
-    @FXML
-    public void onEditPrescriptionBtn(ActionEvent actionEvent) {
+
+    private boolean checkIfOtherButtonIsEngaged() {
+        boolean isEngaged = isAddModeEngaged || isEditModeEngaged;
+        if (isEngaged)
+            errorLabel.setText("Please save your changes before making another change");
+        else
+            errorLabel.setText("");
+
+        return isEngaged;
     }
-
-    @FXML
-    public void onSaveBtn(ActionEvent actionEvent) {
-
-    }
-
 }
