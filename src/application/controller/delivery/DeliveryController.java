@@ -29,7 +29,7 @@ public class DeliveryController implements Initializable {
         try {
             Parent contentarea = FXMLLoader.load(DeliveryController.class.getResource("../../view/delivery/content.fxml"));
             border_pane.setCenter(contentarea);
-        } catch (IOException ex) {
+        } catch (IOException | NullPointerException ex) {
             Logger.getLogger(DeliveryController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
