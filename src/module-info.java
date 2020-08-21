@@ -6,5 +6,9 @@ module NUSHHackathonProject {
     requires javafx.controls;
     requires javafx.fxml;
 
+    requires fontawesomefx;
+    requires jfoenix;
+    requires java.logging;
+
     exports application;
 }
