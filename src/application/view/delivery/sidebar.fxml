@@ -18,7 +18,7 @@
                 <Insets top="10.0" />
             </VBox.margin>
         </ImageView>
-        <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
+        <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neutron Barley">
             <font>
                 <Font name="Calibri" size="14.0" />
             </font>
