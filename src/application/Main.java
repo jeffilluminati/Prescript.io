@@ -24,13 +24,14 @@ public class Main extends Application {
         stage = primaryStage;
         stage.setScene(loadDelivery(genDeliverer()));
         stage.initStyle(StageStyle.UNDECORATED);
+        stage.setTitle("Prescript.io - Delivery");
         stage.show();
     }
 
     private Deliverer genDeliverer() {
         Deliverer deliverer = new Deliverer("Mario,Blk 256,Simei Street 1");
         Doctor doctor = new Doctor(); Patient patient = new Patient("Bobby", "Rosyth School");
-        deliverer.addDeliveries(new Prescription(doctor, patient, "12 tablets of Paracetamol"));
+        deliverer.addDeliveries(new Prescription(doctor, patient, "12 tablets of Paracetamol"), new Prescription(doctor, patient, "6 tablets of Cetrizine to be taken every morning."));
         return deliverer;
     }
 
