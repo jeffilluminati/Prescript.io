@@ -77,10 +77,23 @@
                               <Font name="Calibri Light" size="24.0" />
                            </font>
                         </Label>
+
                      </children>
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
-                        </HBox>
+                     <children>
+                         <Hyperlink id="buttonlink" fx:id="minimize" prefHeight="39.0" prefWidth="28.0" text="―" onAction="#minimizeWin">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding></Hyperlink>
+                         <Hyperlink id="buttonlink" fx:id="close" text="⛌" onAction="#closeWin">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </padding></Hyperlink>
+                     </children></HBox>
                     </children>
                     <VBox.margin>
                         <Insets bottom="2.0" />

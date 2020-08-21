@@ -9,10 +9,12 @@ import java.util.ResourceBundle;
 
 import application.model.doctor.Doctor;
 import javafx.collections.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 public class DeliveryController implements Initializable {
     private double xOffset = 0;
@@ -42,6 +44,20 @@ public class DeliveryController implements Initializable {
         details.setCellValueFactory(new PropertyValueFactory<Prescription, String>("prescription"));
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
+    }
+
+
+
+    @FXML
+    public void closeWin(ActionEvent event) {
+        Stage stage = (Stage)((Hyperlink)event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    public void minimizeWin(ActionEvent event) {
+        Stage stage = (Stage)((Hyperlink)event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 
     private void makeStageDrageable() {
