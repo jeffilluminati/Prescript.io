@@ -1,4 +1,4 @@
-package application.model.delivery;
+package application.model.base;
 
 import application.model.client.Client;
 import application.model.doctor.Doctor;
