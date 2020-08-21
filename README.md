@@ -1,1 +1,1 @@
-TBD based on theme.
+TBD based on theme: something that helps the general public (paraphrased).
