@@ -38,6 +38,7 @@ public class Doctor extends Stakeholder {
         try {
             PrintWriter output = new PrintWriter(filename);
             output.printf("%s,%s", super.getName(), patientList.toString());
+            output.close();
         } catch (IOException e) {
             System.out.println("Error in writing to file: " + e.getMessage());
         }
