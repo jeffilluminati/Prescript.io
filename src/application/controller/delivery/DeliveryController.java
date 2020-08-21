@@ -4,6 +4,7 @@ import application.model.base.Prescription;
 import application.model.delivery.Deliverer;
 import application.Main;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,8 +45,8 @@ public class DeliveryController implements Initializable {
     }
 
     @FXML
-    public void setAdmin(ActionEvent e) {
-
+    public void setAdmin(ActionEvent e) throws IOException {
+        border_pane.setCenter(FXMLLoader.load(Main.class.getResource("/application/view/delivery/admin.fxml")));
     }
 
     @FXML
