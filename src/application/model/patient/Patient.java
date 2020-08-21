@@ -22,5 +22,15 @@ public class Patient extends Stakeholder {
         doctors = new ArrayList<>();
     }
 
+    //copies whole prescription list to file
+    private void updatePrescriptionFile() {
+
+    }
+
+    //adds one presciption to end of prescription file
+    private void addToPrescriptionFile(Prescription p) {
+
+    }
+
 
 }
