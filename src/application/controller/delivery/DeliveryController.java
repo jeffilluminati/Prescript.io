@@ -38,6 +38,21 @@ public class DeliveryController implements Initializable {
 
     private static Deliverer self = new Deliverer();
 
+    @FXML
+    public void setMain(ActionEvent e) {
+        border_pane.setCenter(main);
+    }
+
+    @FXML
+    public void setAdmin(ActionEvent e) {
+
+    }
+
+    @FXML
+    public void setSettings(ActionEvent e) {
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         makeStageDrageable();
