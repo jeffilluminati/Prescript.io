@@ -4,7 +4,4 @@ module NUSHHackathonProject {
 
     requires javafx.controls;
     requires javafx.fxml;
-
-    requires jfoenix;
-    requires fontawesomefx;
 }
