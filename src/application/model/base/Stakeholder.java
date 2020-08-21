@@ -1,14 +1,14 @@
 package application.model.base;
 
-public class Stakeholder {
+public abstract class Stakeholder {
     /*
     Base class that all others extend from
      */
 
-    private String name, role, address;
+    private String name, address;
 
     public Stakeholder(String name, String address, String role) {
-        this.name = name; this.role = role; this.address = address;
+        this.name = name;  this.address = address;
     }
     public Stakeholder(String name, String role) {
         this(name, "", role);
@@ -26,14 +26,6 @@ public class Stakeholder {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getAddress() {
