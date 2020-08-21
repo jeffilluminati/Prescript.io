@@ -2,26 +2,24 @@ package application.model.base;
 
 import application.model.patient.Patient;
 import application.model.doctor.Doctor;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Prescription {
-    Doctor doctor; String target, prescription, docName, patientName;
-    Patient patient;
+    private final SimpleStringProperty target = new SimpleStringProperty(""),
+            prescription = new SimpleStringProperty(""),
+            docName = new SimpleStringProperty(""), patientName  = new SimpleStringProperty("");
     public Prescription(Doctor doctor, Patient patient, String prescription) {
-        this.doctor = doctor;
-        this.patient = patient;
-        this.prescription = prescription;
-        this.target = patient.getAddress();
-        this.docName = doctor.getName();
-        this.patientName = patient.getName();
+        this.prescription.set(prescription);
+        this.target.set(patient.getAddress());
+        this.docName.set(doctor.getName());
+        this.patientName.set(patient.getName());
     }
 
-    public Doctor getDoctor() {
-        return doctor;
-    }
+    // public Doctor getDoctor() {return doctor;}
 
     // public void setDoctor(Doctor doctor) { this.doctor = doctor; }
 
-    public String getDoctorName() { return doctor.getName(); }
+    // public String getDoctorName() { return doctor.getName(); }
 
     //public String getPatientName() { return patient.getName(); }
 
@@ -30,10 +28,10 @@ public class Prescription {
     //public void setPatient(Patient patient) { this.patient = patient; }
 
     public String getPrescription() {
-        return prescription;
+        return prescription.get();
     }
 
     public void setPrescription(String prescription) {
-        this.prescription = prescription;
+        this.prescription.set(prescription);
     }
 }
