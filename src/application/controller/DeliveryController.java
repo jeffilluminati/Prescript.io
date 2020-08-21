@@ -1,5 +1,6 @@
 package application.controller;
 
+import application.model.delivery.Deliverer;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Node;
@@ -13,43 +14,12 @@ import java.util.ResourceBundle;
 public class DeliveryController implements Initializable {
     private double xOffset = 0;
     private double yOffset = 0;
+    private Deliverer deliverer = new Deliverer();
 
     @FXML AnchorPane win;
-
-    @FXML
-    private VBox pnItems = null;
-    @FXML
-    private Button btnOverview;
-
-    @FXML
-    private Button btnOrders;
-
-    @FXML
-    private Button btnCustomers;
-
-    @FXML
-    private Button btnMenus;
-
-    @FXML
-    private Button btnPackages;
-
-    @FXML
-    private Button btnSettings;
-
-    @FXML
-    private Button btnSignout;
-
-    @FXML
-    private Pane pnlCustomer;
-
-    @FXML
-    private Pane pnlOrders;
-
-    @FXML
-    private Pane pnlOverview;
-
-    @FXML
-    private Pane pnlMenus;
+    @FXML private VBox pnItems = null;
+    @FXML private Button btnOverview, btnOrders, btnCustomers, btnMenus, btnPackages, btnSettings, btnSignout;
+    @FXML private Pane pnlCustomer, pnlOrders, pnlOverview, pnlMenus;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -58,7 +28,7 @@ public class DeliveryController implements Initializable {
             try {
 
                 final int j = i;
-                nodes[i] = FXMLLoader.load(getClass().getResource("Item.fxml"));
+                nodes[i] = FXMLLoader.load(getClass().getResource("item.fxml"));
 
                 //give the items some effect
 
@@ -95,5 +65,13 @@ public class DeliveryController implements Initializable {
             pnlOrders.setStyle("-fx-background-color : #464F67");
             pnlOrders.toFront();
         }
+    }
+
+    public Deliverer getDeliverer() {
+        return deliverer;
+    }
+
+    public void setDeliverer(Deliverer deliverer) {
+        this.deliverer = deliverer;
     }
 }
