@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
@@ -24,14 +22,11 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </ImageView>
-                <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neutron Barley">
+                <Button contentDisplay="RIGHT" styleClass="sidebar-user-btn" text="Neutron Barley">
                     <font>
                         <Font name="Calibri" size="14.0" />
                     </font>
-                    <graphic>
-                        <FontAwesomeIcon glyphStyle="-fx-fill:#b8b1b1" iconName="SORT_DESC" size="1.2em" />
-                    </graphic>
-                </JFXButton>
+                </Button>
                 <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
                     <font>
                         <Font name="Calibri Bold" size="14.0" />
@@ -51,7 +46,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="HOME" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="HOME" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -67,7 +61,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="ARCHIVE" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="JOBS" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -83,7 +76,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="BRIEFCASE" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="RESUMES" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -99,7 +91,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="TASKS" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="TASK" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -115,7 +106,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="CALENDAR" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="CALENDER" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -142,7 +132,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="USERS" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="USERS" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -158,7 +147,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="LOCATIONS" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -174,7 +162,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="SITEMAP" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="WORKFLOW" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -190,7 +177,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="DESKTOP" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="JOB BOARDS" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -206,7 +192,6 @@
                         <Insets left="20.0" />
                     </padding>
                     <children>
-                        <FontAwesomeIcon iconName="RSS" size="1.5em" styleClass="sidebar-btn-icon" />
                         <Label text="SOCIAL" textFill="#b8b1b1">
                             <font>
                                 <Font name="Consolas Bold" size="13.0" />
@@ -226,14 +211,8 @@
             <children>
                 <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="774.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@style.css">
                     <children>
-                        <JFXButton alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                            <graphic>
-                                <FontAwesomeIcon iconName="TH_LIST" size="2em" styleClass="menu-bar-btns-icon" />
-                            </graphic>
-                        </JFXButton>
                         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="menu-bar-search-field-box" HBox.hgrow="ALWAYS">
                             <children>
-                                <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
                                 <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                     <font>
                                         <Font name="Calibri" size="16.0" />
@@ -248,23 +227,6 @@
                             </padding>
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
-                            <children>
-                                <JFXButton alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="USER" size="2em" styleClass="menu-bar-btns-icon" />
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="LIST_ALT" size="2em" styleClass="menu-bar-btns-icon" />
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="TH" size="2em" styleClass="menu-bar-btns-icon" />
-                                    </graphic>
-                                </JFXButton>
-                            </children>
                         </HBox>
                     </children>
                     <VBox.margin>
@@ -289,9 +251,6 @@
                                             <font>
                                                 <Font name="Calibri Bold" size="16.0" />
                                             </font>
-                                            <graphic>
-                                                <FontAwesomeIcon glyphStyle="-fx-fill:#757373" iconName="MAP_MARKER" />
-                                            </graphic>
                                         </Label>
                                         <Label layoutX="10.0" layoutY="10.0" styleClass="lbl3" text="Preview this post" textFill="#00a1ff" underline="true">
                                             <font>
@@ -307,50 +266,38 @@
                         </VBox>
                         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                             <children>
-                                <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
+                                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                    </graphic>
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
-                                </JFXButton>
-                                <JFXButton contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                </Button>
+                                <Button contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="BOOKMARK" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                    </graphic>
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
-                                </JFXButton>
-                                <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                </Button>
+                                <Button contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                    </graphic>
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
-                                </JFXButton>
-                                <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                </Button>
+                                <Button contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
-                                    <graphic>
-                                        <FontAwesomeIcon iconName="RECYCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                    </graphic>
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
-                                </JFXButton>
+                                </Button>
                             </children>
                             <HBox.margin>
                                 <Insets left="20.0" />
