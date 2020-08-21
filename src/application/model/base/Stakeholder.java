@@ -7,15 +7,11 @@ public abstract class Stakeholder {
 
     private String name, address;
 
-    public Stakeholder(String name, String address, String role) {
+    public Stakeholder(String name, String address) {
         this.name = name;  this.address = address;
     }
-    public Stakeholder(String name, String role) {
-        this(name, "", role);
-    }
-
-    public Stakeholder(String role) {
-        this("", role);
+    public Stakeholder(String name) {
+        this(name, "");
     }
 
     public Stakeholder() { this(""); }
