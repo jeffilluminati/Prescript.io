@@ -21,14 +21,20 @@ public class Deliverer extends Stakeholder {
         this("", "");
     }
 
+    private Deliverer(String[] args) {
+        this(args[0], args[1]);
+    }
+
+    public Deliverer(String str) {
+        this(str.split(",", 1));
+    }
+
     /*
     format of each line in delivers.csv: <name>,<address>
      */
 
     public static Deliverer parse(String str) {
-        String[] arr = str.split(",");
-        String name = arr[0], address = String.join(",", Arrays.copyOfRange(arr, 1, arr.length));
-        return new Deliverer(name, address);
+        return new Deliverer(str.split(",", 1));
     }
 
     public void addDeliveries(Prescription ...prescriptions) {
