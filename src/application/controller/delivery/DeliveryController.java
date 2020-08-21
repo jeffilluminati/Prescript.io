@@ -27,7 +27,7 @@ public class DeliveryController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         makeStageDrageable();
         try {
-            Parent contentarea = FXMLLoader.load(getClass().getResource("/app/views/ContentArea.fxml"));
+            Parent contentarea = FXMLLoader.load(getClass().getResource("../../view/delivery/content.fxml"));
             border_pane.setCenter(contentarea);
         } catch (IOException ex) {
             Logger.getLogger(DeliveryController.class.getName()).log(Level.SEVERE, null, ex);
