@@ -24,7 +24,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-        stage.setScene(loadDelivery(genDeliverer()));
+//        stage.setScene(loadDelivery(genDeliverer()));
+        stage.setScene(loadDoctor(new Doctor("Mayukh")));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Prescript.io - Delivery");
         stage.show();
@@ -46,6 +47,13 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(url);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Main.class.getResource("view/delivery/style.css").toExternalForm());
+        return scene;
+    }
+
+    public Scene loadDoctor(Doctor doctor) throws IOException {
+        URL url = getClass().getResource("view/doctor.fxml");
+        Parent root = FXMLLoader.load(url);
+        Scene scene = new Scene(root);
         return scene;
     }
 }
