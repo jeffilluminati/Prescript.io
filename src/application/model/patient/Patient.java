@@ -1,8 +1,8 @@
-package application.model.client;
+package application.model.patient;
 
 import application.model.base.*;
 
-public class Client extends Stakeholder {
+public class Patient extends Stakeholder {
     /*
     Joshua, please do this file.
      */
