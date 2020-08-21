@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Patient extends Stakeholder {
     private ArrayList<Prescription> prescriptions;
     private ArrayList<Doctor> doctors;
+    private String IC;
 
     private void addPrescription(Prescription p) { prescriptions.add(p); }
     private void removePrescription(Prescription p) { prescriptions.remove(p); }
@@ -19,14 +20,14 @@ public class Patient extends Stakeholder {
     private void removeDoctor(Doctor d) { doctors.remove(d); }
 
 
-
     public ArrayList<Prescription> getPrescriptions() { return prescriptions; }
     public String getAddress() { return super.getAddress(); }
 
 
 
-    public Patient(String name, String address) {
+    public Patient(String name, String address, String IC) {
         super(name,address);
+        this.IC = IC;
         prescriptions = new ArrayList<>();
         doctors = new ArrayList<>();
     }
@@ -45,5 +46,7 @@ public class Patient extends Stakeholder {
 
     }
 
-
+    public String getIC() {
+        return IC;
+    }
 }
