@@ -18,9 +18,10 @@ public class Patient extends Stakeholder {
     private void addDoctor(Doctor d) { doctors.add(d); }
     private void removeDoctor(Doctor d) { doctors.remove(d); }
 
-    public ArrayList<Prescription> getPrescriptions() {
-        return prescriptions;
-    }
+
+
+    public ArrayList<Prescription> getPrescriptions() { return prescriptions; }
+    public String getAddress() { return super.getAddress(); }
 
 
 
