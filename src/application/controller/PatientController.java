@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.*;
 import javafx.scene.layout.VBox;
 
-public class ClientController implements Initializable {
+public class PatientController implements Initializable {
     @FXML VBox win;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
