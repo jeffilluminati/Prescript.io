@@ -7,8 +7,8 @@ import application.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import application.model.doctor.Doctor;
+import javafx.collections.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,7 +26,7 @@ public class DeliveryController implements Initializable {
 
     final ObservableList<Prescription> data = FXCollections.observableArrayList();
 
-    private Deliverer self = new Deliverer();
+    private static Deliverer self = new Deliverer();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,8 +35,8 @@ public class DeliveryController implements Initializable {
         for(Prescription p: self.getDeliveries()) {
             data.add(p);
         }
-        doctors.setCellValueFactory(new PropertyValueFactory<Prescription, String>("doctor"));
-        patients.setCellValueFactory(new PropertyValueFactory<Prescription, String>("patient"));
+        doctors.setCellValueFactory(new PropertyValueFactory<Prescription, Doctor>("docName"));
+        patients.setCellValueFactory(new PropertyValueFactory<Prescription, String>("patientName"));
         details.setCellValueFactory(new PropertyValueFactory<Prescription, String>("prescription"));
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
@@ -61,11 +61,11 @@ public class DeliveryController implements Initializable {
 
     }
 
-    public Deliverer getSelf() {
+    public static Deliverer getSelf() {
         return self;
     }
 
-    public void setSelf(Deliverer self) {
-        this.self = self;
+    public static void setSelf(Deliverer newSelf) {
+        self = newSelf;
     }
 }

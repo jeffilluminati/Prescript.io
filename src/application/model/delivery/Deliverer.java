@@ -22,7 +22,7 @@ public class Deliverer extends Stakeholder {
     }
 
     public Deliverer(String str) {
-        this(str.split(",", 1));
+        this(str.split(",", 2));
     }
 
     /*

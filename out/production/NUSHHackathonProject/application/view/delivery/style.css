@@ -7,6 +7,10 @@
     -fx-text-fill: #b8b1b1;
 }
 
+.sidebar-buttons {
+    -fx-border-radius: 5; -fx-border-color: white; -fx-background-color: #584D3A; -fx-border-width: 0.5px;
+}
+
 .sidebar-btn{
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
