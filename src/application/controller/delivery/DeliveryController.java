@@ -11,6 +11,7 @@ import application.model.doctor.Doctor;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
@@ -29,6 +30,8 @@ public class DeliveryController implements Initializable {
     @FXML private TableColumn<Prescription, String> details;
     @FXML private TableColumn<Prescription, String> locations;
 
+    private Node main;
+
     final ObservableList<Prescription> data = FXCollections.observableArrayList(
             self.getDeliveries()
     );
@@ -44,6 +47,7 @@ public class DeliveryController implements Initializable {
         details.setCellValueFactory(new PropertyValueFactory<Prescription, String>("prescription"));
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
+        main = content_area;
     }
 
 

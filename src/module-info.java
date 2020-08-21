@@ -4,9 +4,11 @@ module NUSHHackathonProject {
     opens application.view;
     opens application.model.base;
     opens application;
+    opens application.controller.delivery.maps;
 
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.web;
 
     exports application;
 }
