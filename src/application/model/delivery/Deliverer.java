@@ -13,7 +13,7 @@ public class Deliverer extends Stakeholder {
     private ArrayList<Prescription> deliveries;
 
     public Deliverer(String name, String address) {
-        super(name, "Deliverer", address);
+        super(name, address);
         deliveries = new ArrayList<>();
     }
 
