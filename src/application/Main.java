@@ -26,7 +26,7 @@ public class Main extends Application {
         stage = primaryStage;
 //        stage.setScene(loadDelivery(genDeliverer()));
         stage.setScene(loadDoctor(new Doctor("Mayukh")));
-        stage.initStyle(StageStyle.UNDECORATED);
+//        stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Prescript.io - Delivery");
         stage.show();
     }
