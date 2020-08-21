@@ -4,4 +4,5 @@ module NUSHHackathonProject {
     opens application.model;
 
     requires javafx.controls;
+    requires javafx.fxml;
 }

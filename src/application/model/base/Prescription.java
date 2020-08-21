@@ -1,16 +1,16 @@
 package application.model.base;
 
-import application.model.client.Client;
+import application.model.patient.Patient;
 import application.model.doctor.Doctor;
 
 public class Prescription {
-    Doctor doctor; Client client; String prescription, target;
+    Doctor doctor; Patient patient; String prescription, target;
 
-    public Prescription(Doctor doctor, Client client, String prescription) {
+    public Prescription(Doctor doctor, Patient patient, String prescription) {
         this.doctor = doctor;
-        this.client = client;
+        this.patient = patient;
         this.prescription = prescription;
-        this.target = client.getAddress();
+        this.target = patient.getAddress();
     }
 
     public Doctor getDoctor() {
@@ -23,14 +23,14 @@ public class Prescription {
 
     public String getDoctorName() { return doctor.getName(); }
 
-    public String getClientName() { return client.getName(); }
+    public String getPatientName() { return patient.getName(); }
 
-    public Client getClient() {
-        return client;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public String getPrescription() {
