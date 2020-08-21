@@ -134,7 +134,7 @@
                 </HBox>
             <ButtonBar prefHeight="93.0" prefWidth="950.0">
               <buttons>
-                <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="298.0" style="-fx-background-color: #584D3A; -fx-text-fill: white;" styleClass="content-area-circle-btns" text="Mark As Complete">
+                <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="298.0" style="-fx-background-color: #584D3A; -fx-text-fill: white;" styleClass="content-area-circle-btns" text="Mark As Complete" onAction="#markComplete">
                      <font>
                         <Font name="Century Gothic Bold" size="14.0" />
                      </font>

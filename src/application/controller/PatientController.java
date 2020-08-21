@@ -30,7 +30,7 @@ public class PatientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Patient testPatient = new Patient("li da","changi");
+        Patient testPatient = new Patient("li da","changi", "9678C");
 
         testPatient.getPrescriptions();
 

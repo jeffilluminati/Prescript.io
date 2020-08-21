@@ -79,6 +79,21 @@ public class DeliveryController implements Initializable {
 
     }
 
+    @FXML
+    public void markComplete(ActionEvent e) {
+        try {
+            data.remove(table.getSelectionModel().getSelectedIndex());
+            table.setItems(data);
+        } catch (IndexOutOfBoundsException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No row selected!");
+            alert.setContentText("Please select a row before you attempt to mark complete");
+            alert.showAndWait();
+            return;
+        }
+    }
+
     public static Deliverer getSelf() {
         return self;
     }

@@ -14,6 +14,8 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main extends Application {
     public static Stage stage;
@@ -29,8 +31,10 @@ public class Main extends Application {
     }
 
     private Deliverer genDeliverer() {
-        Deliverer deliverer = new Deliverer("Mario,Blk 256,Simei Street 1");
-        Doctor doctor = new Doctor(); Patient patient = new Patient("Bobby", "Rosyth School");
+        Deliverer deliverer = new Deliverer("Mario,Blk 256, Super Mario Brothers District");
+        Patient patient = new Patient("Bobby", "Rosyth School", "5768G");
+        Patient[] arr = {patient};
+        Doctor doctor = new Doctor("Rajesh Koothrapaali", new ArrayList<Patient>(Arrays.asList(arr)));
         deliverer.addDeliveries(new Prescription(doctor, patient, "12 tablets of Paracetamol"), new Prescription(doctor, patient, "6 tablets of Cetrizine to be taken every morning."));
         return deliverer;
     }
