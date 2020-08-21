@@ -62,9 +62,9 @@
     <center>
         <VBox fx:id="content_area" prefHeight="580.0" prefWidth="774.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="774.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@style.css">
+                <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="950.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@style.css">
                     <children>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="589.0" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>
@@ -74,7 +74,7 @@
                      <children>
                         <Label prefHeight="23.0" prefWidth="447.0" text="Prescript.io - Delivery">
                            <font>
-                              <Font name="Calibri Light" size="24.0" />
+                              <Font name="Calibri Light" size="18.0" />
                            </font>
                         </Label>
 
@@ -82,16 +82,16 @@
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
                      <children>
-                         <Hyperlink id="buttonlink" fx:id="minimize" prefHeight="39.0" prefWidth="28.0" text="―" onAction="#minimizeWin">
+                         <Hyperlink id="buttonlink" fx:id="minimize" onAction="#minimizeWin" prefHeight="39.0" prefWidth="28.0" text="―">
                            <padding>
-                              <Insets bottom="10.0" top="10.0" />
+                              <Insets bottom="10.0" />
                            </padding></Hyperlink>
-                         <Hyperlink id="buttonlink" fx:id="close" text="⛌" onAction="#closeWin">
+                         <Hyperlink id="buttonlink" fx:id="close" onAction="#closeWin" text="⛌">
                            <HBox.margin>
                               <Insets right="20.0" />
                            </HBox.margin>
                            <padding>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                              <Insets bottom="10.0" left="10.0" />
                            </padding></Hyperlink>
                      </children></HBox>
                     </children>
@@ -99,7 +99,7 @@
                         <Insets bottom="2.0" />
                     </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="950.0" style="-fx-background-color: #fff;">
+                <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="950.0" style="-fx-background-color: #fff;">
                     <children>
                         <VBox alignment="CENTER_LEFT">
                             <HBox.margin>
@@ -122,7 +122,7 @@
                         <Insets />
                     </VBox.margin>
                <children>
-                  <TableView fx:id="table" prefHeight="505.0" prefWidth="946.0">
+                  <TableView fx:id="table" prefHeight="506.0" prefWidth="946.0">
                     <columns>
                       <TableColumn fx:id="doctors" minWidth="0.0" prefWidth="127.20001220703125" text="Doctor" />
                         <TableColumn fx:id="patients" prefWidth="132.00003051757812" text="Patient" />
@@ -134,7 +134,7 @@
                 </HBox>
             <ButtonBar prefHeight="93.0" prefWidth="950.0">
               <buttons>
-                <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="298.0" style="-fx-background-color: #584D3A; -fx-text-fill: white;" styleClass="content-area-circle-btns" text="Mark As Complete" onAction="#markComplete">
+                <Button mnemonicParsing="false" onAction="#markComplete" prefHeight="12.0" prefWidth="298.0" style="-fx-background-color: #584D3A; -fx-text-fill: white;" styleClass="content-area-circle-btns" text="Mark As Complete">
                      <font>
                         <Font name="Century Gothic Bold" size="14.0" />
                      </font>
