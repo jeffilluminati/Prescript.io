@@ -21,10 +21,15 @@ public class DeliveryController implements Initializable {
     @FXML private VBox content_area, sidebar;
     @FXML private HBox menubar;
     @FXML private Label name;
-    @FXML private TableView table;
-    @FXML private TableColumn doctors, patients, details, locations;
+    @FXML private TableView<Prescription> table;
+    @FXML private TableColumn<Prescription, String> doctors;
+    @FXML private TableColumn<Prescription, String> patients;
+    @FXML private TableColumn<Prescription, String> details;
+    @FXML private TableColumn<Prescription, String> locations;
 
-    final ObservableList<Prescription> data = FXCollections.observableArrayList();
+    final ObservableList<Prescription> data = FXCollections.observableArrayList(
+            self.getDeliveries()
+    );
 
     private static Deliverer self = new Deliverer();
 
@@ -32,10 +37,7 @@ public class DeliveryController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         makeStageDrageable();
         name.setText(self.getName());
-        for(Prescription p: self.getDeliveries()) {
-            data.add(p);
-        }
-        doctors.setCellValueFactory(new PropertyValueFactory<Prescription, Doctor>("docName"));
+        doctors.setCellValueFactory(new PropertyValueFactory<Prescription, String>("docName"));
         patients.setCellValueFactory(new PropertyValueFactory<Prescription, String>("patientName"));
         details.setCellValueFactory(new PropertyValueFactory<Prescription, String>("prescription"));
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
