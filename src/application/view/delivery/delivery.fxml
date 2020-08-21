@@ -22,7 +22,7 @@
                         <Font name="Calibri" size="14.0" />
                     </font>
                 </Label>
-                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="238.0" styleClass="sidebar-buttons" text="Main" textFill="#b8b1b1">
+                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setMain" prefHeight="43.0" prefWidth="238.0" styleClass="sidebar-buttons" text="Main" textFill="#b8b1b1">
                     <font>
                         <Font name="Quicksand Regular" size="16.0" />
                     </font>
@@ -33,7 +33,7 @@
                         <Insets bottom="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-                <Button layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="239.0" styleClass="sidebar-buttons" text="Admin" textFill="#b8b1b1">
+                <Button layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setAdmin" prefHeight="43.0" prefWidth="239.0" styleClass="sidebar-buttons" text="Admin" textFill="#b8b1b1">
                     <font>
                         <Font name="Quicksand Regular" size="16.0" />
                     </font>
@@ -44,7 +44,7 @@
                         <Insets bottom="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="234.0" styleClass="sidebar-buttons" text="Settings" textFill="#b8b1b1">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setSettings" prefHeight="43.0" prefWidth="234.0" styleClass="sidebar-buttons" text="Settings" textFill="#b8b1b1">
                <font>
                   <Font name="Quicksand Regular" size="16.0" />
                </font>
