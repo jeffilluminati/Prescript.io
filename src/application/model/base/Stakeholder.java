@@ -35,16 +35,4 @@ public abstract class Stakeholder {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public boolean isDoctor() {
-        return this.role.equals("Doctor");
-    }
-
-    public boolean isClient() {
-        return this.role.equals("Client");
-    }
-
-    public boolean isDeliverer() {
-        return this.role.equals("Deliverer");
-    }
 }
