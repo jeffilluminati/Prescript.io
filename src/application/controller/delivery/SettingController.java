@@ -41,10 +41,7 @@ public class SettingController implements Initializable {
                 new FileChooser.ExtensionFilter("PNG", "*.png")
         );
         File file = fileChooser.showOpenDialog(Main.stage);
-        if(file != null) {
-
-            imageView.setImage(new Image((URL = file.toURI().toURL().toExternalForm())));
-        }
+        if(file != null) imageView.setImage(new Image((URL = file.toURI().toURL().toExternalForm())));
     }
 
     @FXML
