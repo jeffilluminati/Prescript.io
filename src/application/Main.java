@@ -7,6 +7,8 @@ import application.model.doctor.Doctor;
 import application.model.patient.Patient;
 
 
+
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,14 +25,17 @@ public class Main extends Application {
     public static Stage stage;
 
 
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
 //        stage.setScene(loadDelivery(genDeliverer()));
         stage.setScene(loadDoctor(new Doctor("Mayukh")));
 //        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Prescript.io - Delivery");
+        stage.setTitle("Prescript.io - Doctor");
         stage.show();
+
+        Prescription prescription;
     }
 
     private Deliverer genDeliverer() {
