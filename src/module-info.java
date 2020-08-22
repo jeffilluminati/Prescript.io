@@ -1,10 +1,8 @@
 module NUSHHackathonProject {
-    opens application.controller;
-    opens application.controller.delivery;
-    opens application.view;
-    opens application.model.base;
     opens application;
-    //opens application.controller.delivery.maps;
+    opens application.controller;
+    opens application.model.base;
+    opens application.view;
 
     requires javafx.controls;
     requires javafx.fxml;

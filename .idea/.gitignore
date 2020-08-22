@@ -12,3 +12,6 @@
 
 # uiDesigner.xml
 /uiDesigner.xml
+
+# remove out folder
+../out/
