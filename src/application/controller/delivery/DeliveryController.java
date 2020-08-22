@@ -14,12 +14,17 @@ import javafx.fxml.*;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class DeliveryController implements Initializable {
-    private double xOffset = 0;
-    private double yOffset = 0;
+    private double xOffset = 0, yOffset = 0;
+    static String IMAGE_URL = "src/resources/images/pics/icons8_Person_32px.png";
+    static DeliveryController currentOccurence;
+
+
     @FXML private BorderPane border_pane;
     @FXML private VBox content_area, sidebar;
     @FXML private HBox menubar;
@@ -29,6 +34,7 @@ public class DeliveryController implements Initializable {
     @FXML private TableColumn<Prescription, String> patients;
     @FXML private TableColumn<Prescription, String> details;
     @FXML private TableColumn<Prescription, String> locations;
+    @FXML private ImageView image;
 
     private Node main;
 
@@ -37,6 +43,11 @@ public class DeliveryController implements Initializable {
     );
 
     private static Deliverer self = new Deliverer();
+
+    public void setName(String newname) {
+        name.setText(newname);
+        self.setName(name.getText());
+    }
 
     @FXML
     public void setMain(ActionEvent e) {
@@ -49,8 +60,8 @@ public class DeliveryController implements Initializable {
     }
 
     @FXML
-    public void setSettings(ActionEvent e) {
-
+    public void setSettings(ActionEvent e) throws IOException {
+        border_pane.setCenter(FXMLLoader.load(Main.class.getResource("/application/view/delivery/setting.fxml")));
     }
 
     @Override
@@ -63,6 +74,11 @@ public class DeliveryController implements Initializable {
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
         main = content_area;
+        currentOccurence = this;
+    }
+
+    public void setImage(String IMAGE_URL) {
+        image.setImage(new Image(IMAGE_URL));
     }
 
 
