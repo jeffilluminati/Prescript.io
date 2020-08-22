@@ -1,6 +1,6 @@
 package application.controller.delivery;
 
-import application.Main;
+import application.DeliveryMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
@@ -40,7 +40,7 @@ public class SettingController implements Initializable {
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png")
         );
-        File file = fileChooser.showOpenDialog(Main.stage);
+        File file = fileChooser.showOpenDialog(DeliveryMain.stage);
         if(file != null) imageView.setImage(new Image((URL = file.toURI().toURL().toExternalForm())));
     }
 

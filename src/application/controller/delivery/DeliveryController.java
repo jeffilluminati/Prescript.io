@@ -61,7 +61,7 @@ public class DeliveryController implements Initializable {
 
     @FXML
     public void setSettings(ActionEvent e) throws IOException {
-        border_pane.setCenter(FXMLLoader.load(Main.class.getResource("/application/view/delivery/setting.fxml")));
+        border_pane.setCenter(FXMLLoader.load(DeliveryMain.class.getResource("/application/view/delivery/setting.fxml")));
     }
 
     @Override
