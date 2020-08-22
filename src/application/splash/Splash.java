@@ -43,11 +43,11 @@ public class Splash {
         iv = new ImageView(new Image(new FileInputStream(IMAGE_URL)));
         iv.setFitWidth(200);
         iv.setFitHeight(200);
-        iv.setX(0);
+        iv.setX(100);
         iv.setY(0);
 
         loadProgress = new ProgressBar();
-        loadProgress.setPrefWidth(800);
+        loadProgress.setPrefWidth(400);
         progressText = new Label("Generating phyton.workspace...");
         progressText.setFont(new Font("System", 13));
         //progressText.setStyle("-fx-text-fill:white");
