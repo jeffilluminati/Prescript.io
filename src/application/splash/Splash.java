@@ -44,7 +44,7 @@ public class Splash {
         iv.setFitWidth(200);
         iv.setFitHeight(200);
         iv.setX(100);
-        iv.setY(0);
+        iv.setY(20);
 
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(400);
