@@ -1,7 +1,11 @@
 package application.model.delivery;
 
 import application.model.base.*;
+import application.model.doctor.Doctor;
+import application.model.patient.Patient;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Deliverer extends Stakeholder {
@@ -43,5 +47,22 @@ public class Deliverer extends Stakeholder {
 
     public ArrayList<Prescription> getDeliveries() {
         return deliveries;
+    }
+
+    public static ArrayList<Prescription> loadPrescriptions() {
+        ArrayList<Prescription> arr = new ArrayList<>();
+        try {
+            Scanner sc = new Scanner(new File(System.getProperty("user.dir")+"\\prescriptions.csv"));
+            String[] currentLine;
+            while(sc.hasNext()) {
+                currentLine = sc.nextLine().split(",[^\\w]", 3);
+                String doctor = currentLine[0], patient = currentLine[1], prescription = currentLine[2];
+                arr.add(new Prescription(new Doctor(doctor), new Patient(patient), prescription));
+            }
+        } catch(FileNotFoundException ex) {
+            ex.printStackTrace();
+        } finally {
+            return arr;
+        }
     }
 }

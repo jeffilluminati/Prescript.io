@@ -10,6 +10,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 
 public class PatientController implements Initializable {
@@ -17,12 +20,30 @@ public class PatientController implements Initializable {
     public ListView prescriptionLV;
     @FXML
     public Button updateButton;
+    @FXML
+    public Button prescriptionButton;
+    @FXML
+    public Button doctorsButton;
+    @FXML
+    public TableView prescriptionTable;
+    @FXML
+    public TableColumn<String, Prescription> prescriptionLeft;
+    @FXML
+    public TableColumn<String, Prescription> prescriptionRight;
+
+
+
 
 
     public void displayPrescriptions(Patient patient, ActionEvent event) {
-        for (int i = 0; i < patient.getPrescriptions().size(); i++) {
-            prescriptionLV.getItems().add(patient.getPrescriptions().get(i));
+        if (!patient.getPrescriptions().equals(prescriptionTable.getItems())) {
+            Prescription p;
+            for (int i = 0; i < patient.getPrescriptions().size(); i++) {
+                p = patient.getPrescriptions().get(i);
+                prescriptionTable.getItems().add(p);
+            }
         }
+
     }
 
 
@@ -30,10 +51,10 @@ public class PatientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Patient testPatient = new Patient("li da","changi", "9678C");
+        prescriptionLeft.setCellValueFactory(new PropertyValueFactory<>("prescription"));
+        prescriptionRight.setCellValueFactory(new PropertyValueFactory<>("docName"));
+        displayPrescriptions(Patient.getSelf(), new ActionEvent());
 
-        testPatient.getPrescriptions();
-
-        updateButton.setOnAction(actionEvent -> displayPrescriptions(testPatient, actionEvent));
+        updateButton.setOnAction(actionEvent -> displayPrescriptions(Patient.getSelf(), actionEvent));
     }
 }
