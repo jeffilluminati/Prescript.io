@@ -12,15 +12,15 @@
             <Font name="Century Gothic" size="40.0" />
          </font>
       </Label>
-      <Button id="patient" fx:id="patient" onAction="#patient" layoutX="69.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="147.0" text="Patient">
+      <Button id="patient" fx:id="patient" layoutX="69.0" layoutY="175.0" mnemonicParsing="false" onAction="#patient" prefHeight="91.0" prefWidth="147.0" text="Patient">
          <font>
             <Font name="Corbel" size="25.0" />
          </font></Button>
-       <Button id="doctor" fx:id="doctor" onAction="#doctor" layoutX="235.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="129.0" text="Doctor">
+       <Button id="doctor" fx:id="doctor" layoutX="235.0" layoutY="175.0" mnemonicParsing="false" onAction="#doctor" prefHeight="91.0" prefWidth="129.0" text="Doctor">
          <font>
             <Font name="Corbel" size="25.0" />
          </font></Button>
-       <Button id="deliverer" fx:id="deliverer" onAction="#deliverer" layoutX="382.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="147.0" text="Deliverer">
+       <Button id="deliverer" fx:id="deliverer" layoutX="382.0" layoutY="175.0" mnemonicParsing="false" onAction="#deliverer" prefHeight="91.0" prefWidth="147.0" text="Deliverer">
          <font>
             <Font name="Corbel" size="25.0" />
          </font></Button>
