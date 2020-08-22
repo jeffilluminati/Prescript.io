@@ -44,7 +44,8 @@ public class Doctor extends Stakeholder {
                 Patient p = patientList.get(i);
                 Prescription pp = prescriptions.get(i);
 
-                output.printf(",%s,%s,%s,%s", p.getName(), p.getAddress(), p.getIC(), pp.getPrescription());
+                output.printf(",%s,%s,%s,%s", p.getName().replace(","," "), p.getAddress().replace(",",""),
+                        p.getIC().replace(","," "), pp.getPrescription().replace(","," "));
             }
             output.close();
         } catch (IOException e) {
