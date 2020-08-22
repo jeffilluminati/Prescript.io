@@ -26,8 +26,7 @@ public class PatientMain extends Application {
         Patient.setSelf(loadTempPatient());
         stage = primaryStage;
         stage.setScene(loadPatient(loadTempPatient()));
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Prescript.io - Delivery");
+        stage.setTitle("Prescript.io - Patient");
         stage.show();
     }
 
