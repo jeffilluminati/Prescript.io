@@ -5,6 +5,7 @@ import application.model.doctor.Doctor;
 import application.model.patient.Patient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -157,7 +158,8 @@ public class DoctorController implements Initializable {
         return isEngaged;
     }
 
-    private void dispSelectedPatient(int index) {
+    private void dispSelectedPatient(ActionEvent e) {
+        int index = patientNames.indexOf(((RadioButton) e.getSource()).getText());
         Patient p = doctor.getPatientList().get(index);
         Prescription pp = doctor.getPrescriptions().get(index);
         patientNameTF.setText(p.getName());
@@ -180,12 +182,10 @@ public class DoctorController implements Initializable {
             } else {
                 RadioButton radioButton = new RadioButton();
                 radioButton.setText(obj);
+                radioButton.setToggleGroup(group);
                 radioButtons.add(new RadioButton(obj));
                 index++;
-                radioButton.setToggleGroup(group);
-                radioButton.setOnAction(e -> {
-                    dispSelectedPatient(index);
-                });
+                radioButton.setOnAction(e -> dispSelectedPatient(e));
                 setGraphic(radioButton);
             }
         }
