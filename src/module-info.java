@@ -1,6 +1,7 @@
 module NUSHHackathonProject {
     opens application;
     opens application.controller;
+    opens application.controller.login;
     opens application.controller.delivery;
     opens application.model.base;
     opens application.view;
