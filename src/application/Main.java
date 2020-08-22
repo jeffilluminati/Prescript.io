@@ -29,9 +29,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-//        stage.setScene(loadDelivery(genDeliverer()));
-        stage.setScene(loadDoctor(new Doctor("Mayukh")));
-//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(loadDelivery(genDeliverer()));
+        // stage.setScene(loadDoctor(new Doctor("Mayukh")));
         stage.setTitle("Prescript.io - Doctor");
         stage.show();
 
@@ -54,6 +53,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(url);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Main.class.getResource("view/delivery/style.css").toExternalForm());
+        stage.initStyle(StageStyle.UNDECORATED);
         return scene;
     }
 
