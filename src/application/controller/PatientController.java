@@ -11,10 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 
@@ -37,9 +34,14 @@ public class PatientController implements Initializable {
     public TableView doctorsTable;
     @FXML
     public TableColumn<String, String> doctorsLeft;
-
-
-
+    @FXML
+    public Button accountButton;
+    @FXML
+    public Label usernameLabel;
+    @FXML
+    public Label bigUsernameLabel;
+    @FXML
+    public Label addressLabel;
 
 
     public void displayPrescriptions(ActionEvent event) {
@@ -74,6 +76,8 @@ public class PatientController implements Initializable {
         prescriptionTable.setVisible(false);
         updateButton.setVisible(false);
         doctorsTable.setVisible(true);
+        bigUsernameLabel.setVisible(false);
+        addressLabel.setVisible(false);
     }
 
     public void prescriptionButtonAction(ActionEvent event) {
@@ -82,7 +86,19 @@ public class PatientController implements Initializable {
         prescriptionTable.setVisible(true);
         updateButton.setVisible(true);
         doctorsTable.setVisible(false);
+        bigUsernameLabel.setVisible(false);
+        addressLabel.setVisible(false);
         displayPrescriptions(event);
+    }
+
+    public void accountButtonAction(ActionEvent actionEvent) {
+        prescriptionTable.setVisible(false);
+        updateButton.setVisible(false);
+        doctorsTable.setVisible(false);
+        doctorsButton.setStyle("-fx-background-color: #555566");
+        prescriptionButton.setStyle("-fx-background-color: #555566");
+        bigUsernameLabel.setVisible(true);
+        addressLabel.setVisible(true);
     }
 
 
@@ -90,6 +106,15 @@ public class PatientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        accountButton.setOpacity(0);
+        bigUsernameLabel.setVisible(false);
+        addressLabel.setVisible(false);
+        usernameLabel.setText(Patient.getSelf().getName());
+        addressLabel.setText(Patient.getSelf().getAddress());
+        bigUsernameLabel.setText(Patient.getSelf().getName());
+
+        updateButton.setVisible(true);
         prescriptionTable.setVisible(true);
         doctorsTable.setVisible(false);
         doctorsLeft.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue()));
@@ -102,6 +127,9 @@ public class PatientController implements Initializable {
         prescriptionButton.setOnAction(actionEvent -> prescriptionButtonAction(actionEvent));
         updateButton.setOnAction(actionEvent -> displayPrescriptions(actionEvent));
         doctorsButton.setOnAction(actionEvent -> doctorsButtonAction(actionEvent));
+        accountButton.setOnAction(actionEvent -> accountButtonAction(actionEvent));
         Patient.self.setDoctorsList();
+
+        accountButton.setVisible(true);
     }
 }
