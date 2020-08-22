@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 public class DeliveryController implements Initializable {
     private double xOffset = 0, yOffset = 0;
     static String IMAGE_URL = "src/resources/images/pics/icons8_Person_32px.png";
+
     static DeliveryController currentOccurence;
 
 
@@ -34,7 +35,7 @@ public class DeliveryController implements Initializable {
     @FXML private TableColumn<Prescription, String> patients;
     @FXML private TableColumn<Prescription, String> details;
     @FXML private TableColumn<Prescription, String> locations;
-    @FXML private ImageView image;
+    @FXML public ImageView image;
 
     private Node main;
 

@@ -25,8 +25,7 @@ public class DeliveryMain extends Application {
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
         stage.setScene(loadDelivery(genDeliverer()));
-        // stage.setScene(loadDoctor(new Doctor("Mayukh")));
-        stage.setTitle("Prescript.io - Doctor");
+        stage.setTitle("Prescript.io - Deliverer");
         stage.show();
 
         Prescription prescription;

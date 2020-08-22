@@ -23,7 +23,7 @@ public class SettingController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        imageView.setImage(DeliveryController.currentOccurence.image.getImage());
     }
 
     @FXML
