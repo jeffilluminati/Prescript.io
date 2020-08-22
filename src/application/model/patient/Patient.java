@@ -32,6 +32,10 @@ public class Patient extends Stakeholder {
         doctors = new ArrayList<>();
     }
 
+    public Patient(String name) {
+        this(name, "", "");
+    }
+
     //copies whole prescription list to file
     private void updatePrescriptionFile() {
         try {
