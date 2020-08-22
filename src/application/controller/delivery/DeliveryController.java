@@ -31,10 +31,7 @@ public class DeliveryController implements Initializable {
     @FXML private HBox menubar;
     @FXML private Label name;
     @FXML private TableView<Prescription> table;
-    @FXML private TableColumn<Prescription, String> doctors;
-    @FXML private TableColumn<Prescription, String> patients;
-    @FXML private TableColumn<Prescription, String> details;
-    @FXML private TableColumn<Prescription, String> locations;
+    @FXML private TableColumn<Prescription, String> doctors, patients, details, locations;
     @FXML public ImageView image;
 
     private Node main;
@@ -53,6 +50,11 @@ public class DeliveryController implements Initializable {
     @FXML
     public void setMain(ActionEvent e) {
         border_pane.setCenter(main);
+    }
+
+    @FXML
+    public void setGroups(ActionEvent e) throws IOException {
+        border_pane.setCenter(FXMLLoader.load(DeliveryMain.class.getResource("/application/view/delivery/groups.fxml")));
     }
 
     @FXML
