@@ -1,0 +1,27 @@
+.button {
+    -fx-background-color: white;
+    -fx-round-border: 10;
+    -fx-border-color: white;
+    -fx-padding: 5;
+    -fx-text-fill: white;
+}
+
+#patient {
+    -fx-background-color: #1FB7E0;
+}
+
+#doctor {
+    -fx-background-color: #25DA50;
+}
+
+#deliverer {
+    -fx-background-color: #DA25AF;
+}
+
+#page {
+    -fx-background-color: black;
+}
+
+#label {
+    -fx-text-fill: white;
+}

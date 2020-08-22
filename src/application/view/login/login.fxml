@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="application.controller.login.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane id="page" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.login.LoginController">
+   <children>
+      <Label id="label" alignment="CENTER" contentDisplay="CENTER" layoutY="40.0" prefHeight="51.0" prefWidth="600.0" text="Are you a:">
+         <font>
+            <Font name="Century Gothic" size="40.0" />
+         </font>
+      </Label>
+      <Button id="patient" fx:id="patient" onAction="#patient" layoutX="69.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="147.0" text="Patient">
+         <font>
+            <Font name="Corbel" size="25.0" />
+         </font></Button>
+       <Button id="doctor" fx:id="doctor" onAction="#doctor" layoutX="235.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="129.0" text="Doctor">
+         <font>
+            <Font name="Corbel" size="25.0" />
+         </font></Button>
+       <Button id="deliverer" fx:id="deliverer" onAction="#deliverer" layoutX="382.0" layoutY="175.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="147.0" text="Deliverer">
+         <font>
+            <Font name="Corbel" size="25.0" />
+         </font></Button>
+   </children>
 </AnchorPane>
