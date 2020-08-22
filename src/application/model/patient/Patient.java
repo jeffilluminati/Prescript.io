@@ -96,3 +96,25 @@ public class Patient extends Stakeholder {
 
     public static Patient getSelf() { return self; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
