@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PatientController">
    <children>
-      <Label layoutX="355.0" layoutY="14.0" prefHeight="56.0" prefWidth="171.0" text="Prescriptions" textFill="#ececec">
-         <font>
-            <Font size="30.0" />
-         </font></Label>
-      <Button fx:id="updateButton" layoutX="492.0" layoutY="280.0" mnemonicParsing="false" text="Update" />
-      <Button fx:id="prescriptionButton" layoutY="42.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="163.0" style="-fx-background-color: #555566;" text="Prescriptions" textFill="#ececec" />
-      <Button fx:id="doctorsButton" layoutY="77.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="163.0" style="-fx-background-color: #555566;" text="Assigned Doctors" textFill="#f3f3f3" />
-      <TableView fx:id="prescriptionTable" layoutX="324.0" layoutY="70.0" prefHeight="200.0" prefWidth="233.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e5a85" height="436.0" layoutX="-7.0" layoutY="-17.0" stroke="BLACK" strokeType="INSIDE" width="153.0" />
+      <Button fx:id="doctorsButton" layoutY="77.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #555566;" text="Doctors" textFill="#f3f3f3" />
+      <TableView fx:id="prescriptionTable" layoutX="145.0" layoutY="-2.0" prefHeight="406.0" prefWidth="455.0" visible="false">
          <columns>
-            <TableColumn fx:id="prescriptionLeft" prefWidth="118.66668701171875" text="C1" />
-            <TableColumn fx:id="prescriptionRight" prefWidth="114.66659545898438" text="C2" />
+            <TableColumn fx:id="prescriptionLeft" prefWidth="316.00001525878906" text="Description" />
+            <TableColumn fx:id="prescriptionRight" prefWidth="138.66665649414062" text="Doctor" />
          </columns>
       </TableView>
+      <Button fx:id="updateButton" layoutX="29.0" layoutY="155.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="87.0" text="Update" visible="false" />
+      <TableView fx:id="doctorsTable" layoutX="146.0" prefHeight="400.0" prefWidth="455.0">
+        <columns>
+          <TableColumn fx:id="doctorsLeft" prefWidth="454.000005086263" text="Name" />
+        </columns>
+      </TableView>
+      <Button fx:id="prescriptionButton" layoutY="42.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #BB9955;" text="Prescriptions" textFill="#ececec" />
    </children>
 </AnchorPane>
