@@ -39,7 +39,7 @@ public class DoctorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        leftAccordion.expandedPaneProperty()
+        leftAccordion.expandedPaneProperty();
         doctor = Doctor.loadFromCsv("doctor.csv");
 
         for (Patient p: doctor.getPatientList()) {
