@@ -3,9 +3,7 @@ package application.model.patient;
 import application.model.base.*;
 import application.model.doctor.Doctor;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Patient extends Stakeholder {
@@ -23,7 +21,7 @@ public class Patient extends Stakeholder {
     public ArrayList<Prescription> getPrescriptions() { return prescriptions; }
     public String getAddress() { return super.getAddress(); }
 
-
+    public static Patient self;
 
     public Patient(String name, String address, String IC) {
         super(name,address);
@@ -41,10 +39,6 @@ public class Patient extends Stakeholder {
         }
     }
 
-    //adds one prescription to end of prescription file
-    private void addToPrescriptionFile(Prescription p) {
-
-    }
 
     public void setPrescriptions(ArrayList<Prescription> prescriptions) {
         this.prescriptions = prescriptions;
@@ -65,4 +59,26 @@ public class Patient extends Stakeholder {
     public String getIC() {
         return IC;
     }
+
+    /*
+    public static Patient loadFromCsv(String filename) throws IOException {
+        Patient returnPatient;
+
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String[] line;
+        line = br.readLine().split(",");
+        returnPatient = new Patient(line[0],line[1],line[2]);
+
+        while(br.readLine() != null) {
+            returnPatient.prescriptions.add(new Prescription());
+        }
+        return returnPatient;
+    }
+
+
+     */
+
+    public static void setSelf(Patient p) { self = p; }
+
+    public static Patient getSelf() { return self; }
 }
