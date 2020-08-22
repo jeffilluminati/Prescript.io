@@ -21,12 +21,10 @@ Prescript.io can be used for many purposes:
    - Grocery delivery
    - Delivery of goods for charity services (e.g. for dorm workers)
    
-**This was made as part of a hackathon hosted by NUS High School and sponsored by CSIT Singapore.**
-
+**This was made as part of a hackathon hosted by NUS High School and attended by NUS High Students.**
 
 
 ![The NUS High School Logo](https://upload.wikimedia.org/wikipedia/en/thumb/8/85/NUSHS_Logo.png/220px-NUSHS_Logo.png "NUS High School")
-![CSIT Logo](https://www.csit.gov.sg/images/default-source/csit-logo-and-icon/csit-logo.png "CSIT Logo")
 
 
 
