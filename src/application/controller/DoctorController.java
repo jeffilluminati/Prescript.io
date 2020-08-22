@@ -3,16 +3,19 @@ package application.controller;
 import application.model.base.Prescription;
 import application.model.doctor.Doctor;
 import application.model.patient.Patient;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class DoctorController implements Initializable {
     @FXML
-    public Accordion leftAccordion;
+    public ListView listView;
     @FXML
     public TextField patientNameTF;
     @FXML
@@ -36,23 +39,21 @@ public class DoctorController implements Initializable {
 
     private Doctor doctor;
     private int currentIndexOfPatient;
+    private ToggleGroup group = new ToggleGroup();
+    private ArrayList<RadioButton> radioButtons = new ArrayList<>();
+    public static final ObservableList patientNames = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        leftAccordion.expandedPaneProperty()
         doctor = Doctor.loadFromCsv("doctor.csv");
 
+        listView.setEditable(true);
         for (Patient p: doctor.getPatientList()) {
-            TitledPane pane = new TitledPane(p.getName(), new Label(""));
-            pane.setOnContextMenuRequested(e -> {
-                patientNameTF.setText(p.getName());
-                patientICTF.setText(p.getIC());
-                addressTF.setText(p.getAddress());
-                errorLabel.setText("");
-                currentIndexOfPatient = leftAccordion.getPanes().indexOf(pane);
-            });
-            leftAccordion.getPanes().add(pane);
+            patientNames.add(p.getName());
         }
+        listView.setItems(patientNames);
+
+        listView.setCellFactory(param -> new RadioListCell());
     }
 
     @FXML
@@ -72,8 +73,6 @@ public class DoctorController implements Initializable {
        
         saveBtn.setOnAction(e -> {
 
-
-
             patientNameTF.setEditable(false); patientICTF.setEditable(false); addressTF.setEditable(false);
             prescriptionNameTF.setEditable(false); prescriptionDescriptionTF.setEditable(false);
 
@@ -83,21 +82,8 @@ public class DoctorController implements Initializable {
             String prescriptionName = prescriptionNameTF.getText();
             String prescriptionDescription = prescriptionDescriptionTF.getText();
 
-            TitledPane pane = new TitledPane(patientName, new Label(""));
-            leftAccordion.getPanes().add(pane);
-            pane.setOnContextMenuRequested(event -> {
-                int index = leftAccordion.getPanes().indexOf(pane);
-                Patient p = doctor.getPatientList().get(index);
-                Prescription pp = doctor.getPrescriptions().get(index);
-                patientNameTF.setText(p.getName());
-                patientICTF.setText(p.getIC());
-                addressTF.setText(p.getAddress());
-                prescriptionNameTF.setText(pp.getPrescription().split("\\s:\\s")[0]);
-                prescriptionDescriptionTF.setText(pp.getPrescription().split("\\s:\\s")[1]);
-                errorLabel.setText("");
-
-                currentIndexOfPatient = leftAccordion.getPanes().indexOf(pane);
-            });
+            patientNames.add(patientName);
+            listView.setItems(patientNames);
 
             Patient p = new Patient(patientName, address, patientIC);
             Prescription pp = new Prescription(doctor, p, prescriptionName + " : " + prescriptionDescription);
@@ -149,14 +135,14 @@ public class DoctorController implements Initializable {
         if (checkIfOtherButtonIsEngaged())
             return;
 
-        leftAccordion.getPanes().remove(this.currentIndexOfPatient);
+        patientNames.remove(this.currentIndexOfPatient);
         doctor.getPatientList().remove(this.currentIndexOfPatient);
         doctor.getPrescriptions().remove(this.currentIndexOfPatient);
 
         patientNameTF.setText(""); patientICTF.setText(""); addressTF.setText("");
         prescriptionNameTF.setText(""); prescriptionDescriptionTF.setText("");
 
-        errorLabel.setText("Please Select a Patient using the menu on the left or add a new patient");
+        doctor.saveToCsv("doctor.csv");
 
     }
 
@@ -169,5 +155,39 @@ public class DoctorController implements Initializable {
             errorLabel.setText("");
 
         return isEngaged;
+    }
+
+    private void dispSelectedPatient(int index) {
+        Patient p = doctor.getPatientList().get(index);
+        Prescription pp = doctor.getPrescriptions().get(index);
+        patientNameTF.setText(p.getName());
+        patientICTF.setText(p.getIC());
+        addressTF.setText(p.getAddress());
+        prescriptionNameTF.setText(pp.getPrescription().split("\\s:\\s")[0]);
+        prescriptionDescriptionTF.setText(pp.getPrescription().split("\\s:\\s")[1]);
+        errorLabel.setText("");
+    }
+
+
+    private class RadioListCell extends ListCell<String> {
+        private int index = -1;
+        @Override
+        public void updateItem(String obj, boolean empty) {
+            super.updateItem(obj, empty);
+            if (empty) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                RadioButton radioButton = new RadioButton();
+                radioButton.setText(obj);
+                radioButtons.add(new RadioButton(obj));
+                index++;
+                radioButton.setToggleGroup(group);
+                radioButton.setOnAction(e -> {
+                    dispSelectedPatient(index);
+                });
+                setGraphic(radioButton);
+            }
+        }
     }
 }
