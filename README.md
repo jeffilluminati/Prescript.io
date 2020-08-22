@@ -6,7 +6,7 @@ Created by: Joshua Cheong, Mayukh Das and Prannaya Gupta
 ## What exactly is Prescript.io?
 - A Destop application which serves as a Hospital Prescription medication delivery management system. 
 - Platform that enables doctors to deliver prescription medication to patients, via the help of delivery drivers. 
-- It has three clients, named **Doctor**, **Deliverer**, and **Patient**. 
+- It has three clients, named **Doctor**, **Deliverer**, and **Patient**.
    - **Doctor** - Enters prescription for patients
    - **Deliverer** - Manages queue and delivers medication to patients
    - **Patients** - Acknowledges receipt of medication
@@ -20,4 +20,13 @@ Prescript.io can be used for many purposes:
    - Online Shopping delivery
    - Grocery delivery
    - Delivery of goods for charity services (e.g. for dorm workers)
+   
+**This was made as part of a hackathon hosted by NUS High School and sponsored by CSIT Singapore.**
+
+
+
+![The NUS High School Logo](https://upload.wikimedia.org/wikipedia/en/thumb/8/85/NUSHS_Logo.png/220px-NUSHS_Logo.png "NUS High School")
+![CSIT Logo](https://www.csit.gov.sg/images/default-source/csit-logo-and-icon/csit-logo.png "CSIT Logo")
+
+
 
