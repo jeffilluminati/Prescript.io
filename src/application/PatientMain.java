@@ -8,6 +8,7 @@ import application.model.patient.Patient;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.stage.StageStyle;
@@ -27,6 +28,7 @@ public class PatientMain extends Application {
         stage = primaryStage;
         stage.setScene(loadPatient(loadTempPatient()));
         stage.setTitle("Prescript.io - Patient");
+        stage.getIcons().add(new Image(("file:src/resources/images/icons/icon.png")));
         stage.show();
     }
 

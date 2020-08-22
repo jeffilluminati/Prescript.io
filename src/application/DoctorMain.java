@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class DoctorMain extends Application {
     public void start(Stage stage) throws Exception {
         stage.setScene(loadDoctor(Doctor.loadFromCsv("doctor.csv")));
         stage.setTitle("Prescript.io - Doctor");
+        stage.getIcons().add(new Image(("file:src/resources/images/icons/icon.png")));
         stage.show();
     }
 
