@@ -31,10 +31,11 @@ public class PatientMain extends Application {
     }
 
     private Patient loadTempPatient() {
-        Patient p = new Patient("lida","changi","t1234567h");
-        Doctor d = new Doctor("hun");
-        p.getPrescriptions().add(new Prescription(d,p,"water"));
-        p.getPrescriptions().add(new Prescription(d,p,"cake"));
+        Doctor d = Doctor.loadFromCsv("doctor.csv");
+        Patient p = d.getPatientList().get(0);
+        for(Prescription prescription: d.getPrescriptions()) {
+            if(prescription.getPatientName().equals(p.getName())) p.getPrescriptions().add(prescription);
+        }
         return p;
     }
 

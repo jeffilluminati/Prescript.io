@@ -40,6 +40,9 @@ public class Deliverer extends Stakeholder {
     public void addDeliveries(Prescription ...prescriptions) {
         deliveries.addAll(Arrays.asList(prescriptions));
     }
+    public void addDeliveries(ArrayList<Prescription> prescriptions) {
+        deliveries.addAll(prescriptions);
+    }
 
     public void markComplete(Prescription prescription) {
         deliveries.remove(prescription);

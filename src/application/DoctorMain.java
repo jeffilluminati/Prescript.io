@@ -21,7 +21,7 @@ public class DoctorMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(loadDoctor(new Doctor("Dr. person")));
+        stage.setScene(loadDoctor(Doctor.loadFromCsv("doctor.csv")));
         stage.setTitle("Prescript.io - Doctor");
         stage.show();
     }

@@ -32,12 +32,9 @@ public class DeliveryMain extends Application {
     }
 
     private Deliverer genDeliverer() {
-        Deliverer deliverer = new Deliverer("Mario,Blk 256, Super Mario Brothers District");
-        Patient patient = new Patient("Ho Shing Tat, Nicholas", "Rosyth School", "5768G");
-        Patient[] arr = {patient};
-        Doctor doctor = new Doctor("Dr. Rajesh Koothrapaali");
-        doctor.setPatientList(new ArrayList<Patient>(Arrays.asList(arr)));
-        deliverer.addDeliveries(new Prescription(doctor, patient, "12 tablets of Paracetamol"), new Prescription(doctor, patient, "6 tablets of Cetrizine: To be taken every morning."));
+        Deliverer deliverer = new Deliverer("Mario,Blk 256,Super Mario Brothers District");
+        Doctor doctor = Doctor.loadFromCsv("doctor.csv");
+        deliverer.addDeliveries(doctor.getPrescriptions());
         return deliverer;
     }
 
