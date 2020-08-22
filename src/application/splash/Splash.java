@@ -27,12 +27,10 @@ public class Splash {
     Thread proganim;
 
     private ObservableList<String> texts = FXCollections.observableArrayList("Implementing MVC Framework...",
-            "Creating 20+ Files...", "Reading Java API...", "Importing *...", "Generating classes...",
-            "Generating interfaces...", "Generating enumerations...", "Extending classes...",
-            "Implementing interfaces...", "Setting preferences...",
-            "Introducing models to environment...", "Catching all Pokemon...", "Seeking damages...",
-            "Formatting Menubar...", "Creating JavaFX Controls...", "Deriving images...", "Finding logo...", "Generating logo...",
-            "Loading FXML Files...", "Generating login.fxml...", "Searching for JavaFX Widgets...", "Generating GUI...",
+            "Creating 20+ Files...", "Generating classes...", "Extending classes...",
+            "Introducing models to environment...", "Seeking damages...", "Formatting Menubar...",
+            "Deriving images...", "Finding logo...", "Generating logo...",
+            "Loading FXML Files...", "Generating login.fxml...", "Generating GUI...",
             "Generating sidebar...", "Styling the window...", "Initializing LoginController...",  "Threading everything together...",
             "Reading everything...", "Preparing Environment...", "Finally loading Login...", "Completed.");
 
@@ -71,7 +69,7 @@ public class Splash {
 
     private Runnable progresser = () -> {
         progress.getChildren().add(new Transition() {
-            { setCycleDuration(Duration.millis(8000)); }
+            { setCycleDuration(Duration.millis(4000)); }
             @Override
             protected void interpolate(double frac) {
                 loadProgress.setProgress(frac);

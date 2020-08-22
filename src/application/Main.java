@@ -16,7 +16,8 @@ import java.io.IOException;
 
 
 public class Main extends Application {
-    private Stage stage;
+    public static Stage stage;
+    public static Application currentOccurence;
     private Splash splash;
     private double xOffset = 0;
     private double yOffset = 0;
@@ -24,6 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
+        this.currentOccurence = this;
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.getIcons().add(new Image(("file:src/resources/images/icons/icon.png")));
         splash();

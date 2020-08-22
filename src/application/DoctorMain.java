@@ -25,4 +25,6 @@ public class DoctorMain extends Application {
         stage.setTitle("Prescript.io - Doctor");
         stage.show();
     }
+
+    public static void main(String ...args) { launch(args); }
 }

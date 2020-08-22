@@ -46,4 +46,6 @@ public class PatientMain extends Application {
         //scene.getStylesheets().add(Main.class.getResource("view/patient.fxml").toExternalForm());
         return scene;
     }
+
+    public static void main(String ...args) { launch(args); }
 }

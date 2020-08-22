@@ -51,4 +51,6 @@ public class DeliveryMain extends Application {
         return scene;
     }
 
+    public static void main(String ...args) { launch(args); }
+
 }
