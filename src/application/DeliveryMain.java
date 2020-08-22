@@ -6,9 +6,6 @@ import application.model.delivery.Deliverer;
 import application.model.doctor.Doctor;
 import application.model.patient.Patient;
 
-
-
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,10 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Main extends Application {
+public class DeliveryMain extends Application {
     public static Stage stage;
-
-
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -52,15 +47,9 @@ public class Main extends Application {
         URL url = getClass().getResource("view/delivery/delivery.fxml");
         Parent root = FXMLLoader.load(url);
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(Main.class.getResource("view/delivery/style.css").toExternalForm());
+        scene.getStylesheets().add(DeliveryMain.class.getResource("view/delivery/style.css").toExternalForm());
         stage.initStyle(StageStyle.UNDECORATED);
         return scene;
     }
 
-    public Scene loadDoctor(Doctor doctor) throws IOException {
-        URL url = getClass().getResource("view/doctor.fxml");
-        Parent root = FXMLLoader.load(url);
-        Scene scene = new Scene(root);
-        return scene;
-    }
 }

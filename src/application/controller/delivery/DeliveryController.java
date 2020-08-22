@@ -2,13 +2,12 @@ package application.controller.delivery;
 
 import application.model.base.Prescription;
 import application.model.delivery.Deliverer;
-import application.Main;
+import application.DeliveryMain;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.model.doctor.Doctor;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -46,7 +45,7 @@ public class DeliveryController implements Initializable {
 
     @FXML
     public void setAdmin(ActionEvent e) throws IOException {
-        border_pane.setCenter(FXMLLoader.load(Main.class.getResource("/application/view/delivery/admin.fxml")));
+        border_pane.setCenter(FXMLLoader.load(DeliveryMain.class.getResource("/application/view/delivery/admin.fxml")));
     }
 
     @FXML
@@ -86,15 +85,15 @@ public class DeliveryController implements Initializable {
             yOffset = event.getSceneY();
         });
         border_pane.setOnMouseDragged(event -> {
-            Main.stage.setX(event.getScreenX() - xOffset);
-            Main.stage.setY(event.getScreenY() - yOffset);
-            Main.stage.setOpacity(0.7f);
+            DeliveryMain.stage.setX(event.getScreenX() - xOffset);
+            DeliveryMain.stage.setY(event.getScreenY() - yOffset);
+            DeliveryMain.stage.setOpacity(0.7f);
         });
         border_pane.setOnDragDone((e) -> {
-            Main.stage.setOpacity(1.0f);
+            DeliveryMain.stage.setOpacity(1.0f);
         });
         border_pane.setOnMouseReleased((e) -> {
-            Main.stage.setOpacity(1.0f);
+            DeliveryMain.stage.setOpacity(1.0f);
         });
 
     }
