@@ -74,6 +74,7 @@ public class DeliveryController implements Initializable {
         details.setCellValueFactory(new PropertyValueFactory<Prescription, String>("prescription"));
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
+        table.getSortOrder().add(locations);
         main = content_area;
         currentOccurence = this;
     }
