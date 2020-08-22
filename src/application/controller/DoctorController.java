@@ -39,6 +39,7 @@ public class DoctorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        leftAccordion.expandedPaneProperty()
         doctor = Doctor.loadFromCsv("doctor.csv");
 
         for (Patient p: doctor.getPatientList()) {
@@ -59,7 +60,6 @@ public class DoctorController implements Initializable {
     public void onAddPatientBtn() {
         checkIfOtherButtonIsEngaged();
 
-        TitledPane pane = new TitledPane("", new Label(""));
 
         patientNameTF.setText(""); patientICTF.setText(""); addressTF.setText("");
         prescriptionNameTF.setText(""); prescriptionDescriptionTF.setText("");
@@ -72,6 +72,8 @@ public class DoctorController implements Initializable {
        
         saveBtn.setOnAction(e -> {
 
+
+
             patientNameTF.setEditable(false); patientICTF.setEditable(false); addressTF.setEditable(false);
             prescriptionNameTF.setEditable(false); prescriptionDescriptionTF.setEditable(false);
 
@@ -81,13 +83,17 @@ public class DoctorController implements Initializable {
             String prescriptionName = prescriptionNameTF.getText();
             String prescriptionDescription = prescriptionDescriptionTF.getText();
 
-            pane.setAccessibleText(patientName);
+            TitledPane pane = new TitledPane(patientName, new Label(""));
+            leftAccordion.getPanes().add(pane);
             pane.setOnContextMenuRequested(event -> {
-                patientNameTF.setText(patientName);
-                patientICTF.setText(patientIC);
-                addressTF.setText(address);
-                prescriptionNameTF.setText(prescriptionName);
-                prescriptionDescriptionTF.setText(prescriptionDescription);
+                int index = leftAccordion.getPanes().indexOf(pane);
+                Patient p = doctor.getPatientList().get(index);
+                Prescription pp = doctor.getPrescriptions().get(index);
+                patientNameTF.setText(p.getName());
+                patientICTF.setText(p.getIC());
+                addressTF.setText(p.getAddress());
+                prescriptionNameTF.setText(pp.getPrescription().split("\\s:\\s")[0]);
+                prescriptionDescriptionTF.setText(pp.getPrescription().split("\\s:\\s")[1]);
                 errorLabel.setText("");
 
                 currentIndexOfPatient = leftAccordion.getPanes().indexOf(pane);

@@ -44,7 +44,7 @@ public class Doctor extends Stakeholder {
                 Patient p = patientList.get(i);
                 Prescription pp = prescriptions.get(i);
 
-                output.printf("%s,%s,%s,%s", p.getName(), p.getAddress(), p.getIC(), pp.getPrescription());
+                output.printf(",%s,%s,%s,%s", p.getName(), p.getAddress(), p.getIC(), pp.getPrescription());
             }
             output.close();
         } catch (IOException e) {
@@ -71,7 +71,7 @@ public class Doctor extends Stakeholder {
             return doctor;
 
         } catch (IOException e) {
-            System.out.println("Error in writing to file: " + e.getMessage());
+            System.out.println("Error in reading from file: " + e.getMessage());
             return new Doctor("");
         }
     }
