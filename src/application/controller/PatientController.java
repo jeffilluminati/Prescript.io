@@ -90,7 +90,7 @@ public class PatientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Patient.self.setDoctorsList();
+        prescriptionTable.setVisible(true);
         doctorsTable.setVisible(false);
         doctorsLeft.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue()));
 
@@ -102,5 +102,6 @@ public class PatientController implements Initializable {
         prescriptionButton.setOnAction(actionEvent -> prescriptionButtonAction(actionEvent));
         updateButton.setOnAction(actionEvent -> displayPrescriptions(actionEvent));
         doctorsButton.setOnAction(actionEvent -> doctorsButtonAction(actionEvent));
+        Patient.self.setDoctorsList();
     }
 }
