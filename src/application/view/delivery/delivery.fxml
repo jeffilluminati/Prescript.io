@@ -11,14 +11,14 @@
     <left>
         <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <ImageView fitHeight="55.0" fitWidth="53.0" pickOnBounds="true" smooth="false">
+                <ImageView fitHeight="55.0" fitWidth="53.0" pickOnBounds="true" smooth="false" fx:id="image">
 
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>
-               <image>
-                  <Image url="@../../../resources/images/pics/icons8_Person_32px.png" />
-               </image>
+                    <image>
+                        <Image url="@../../../resources/images/pics/icons8_Person_32px.png" />
+                    </image>
                 </ImageView>
                 <Label fx:id="name" contentDisplay="RIGHT" styleClass="sidebar-user-btn">
                     <font>
