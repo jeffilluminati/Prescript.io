@@ -93,18 +93,13 @@
                     <font>
                         <Font size="10.0" />
                     </font></Button>
-                <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="204.0" text="Send Prescription">
-                    <font>
-                        <Font size="10.0" />
-                    </font>
-                </Button>
                 <Button fx:id="saveBtn" maxWidth="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="25.0" text="Save">
                     <font>
                         <Font size="10.0" />
                     </font></Button>
             </buttons>
             <BorderPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
             </BorderPane.margin>
         </ButtonBar>
     </bottom>

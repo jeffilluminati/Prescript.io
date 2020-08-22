@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="400.0" styleClass="dark-panel" stylesheets="@settingStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.delivery.SettingController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="SET PROFILE:" textFill="#e1dada">
+            <font>
+                <Font name="Alegreya Sans Bold" size="15.0" />
+            </font>
+        </Label>
+        <GridPane layoutX="20.0" layoutY="42.0" prefHeight="334.0" prefWidth="377.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="42.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.33331298828125" minWidth="80.4" prefWidth="95.4" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="437.000015258789" minWidth="10.0" prefWidth="281.6" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="61.66667302449544" minHeight="0.0" prefHeight="25.4" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="74.00000381469727" minHeight="0.0" prefHeight="25.4" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="250.2" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="108.33331298828125" minHeight="10.0" prefHeight="21.33331298828125" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="18.0" prefWidth="70.0" text="Name" textFill="WHITE" GridPane.halignment="RIGHT">
+                    <font>
+                        <Font name="Candara Bold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets top="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="name" prefWidth="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="20.0" top="10.0" />
+                    </GridPane.margin>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Label prefHeight="18.0" prefWidth="129.0" text="Choose Image" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="15.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Candara Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="browse" onAction="#browse" alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="buttons" text="BROWSE..." textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="100.0" layoutX="92.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/pics/icons8_Person_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            </children>
+        </GridPane>
+        <Button fx:id="save" onAction="#saveDetails" layoutX="287.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="buttons" text="SAVE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancel" onAction="#cancel" layoutX="172.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="buttons" text="CANCEL">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

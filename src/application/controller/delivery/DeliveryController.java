@@ -2,25 +2,30 @@ package application.controller.delivery;
 
 import application.model.base.Prescription;
 import application.model.delivery.Deliverer;
-import application.Main;
+import application.DeliveryMain;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.model.doctor.Doctor;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class DeliveryController implements Initializable {
-    private double xOffset = 0;
-    private double yOffset = 0;
+    private double xOffset = 0, yOffset = 0;
+    static String IMAGE_URL = "src/resources/images/pics/icons8_Person_32px.png";
+
+    static DeliveryController currentOccurence;
+
+
     @FXML private BorderPane border_pane;
     @FXML private VBox content_area, sidebar;
     @FXML private HBox menubar;
@@ -30,6 +35,7 @@ public class DeliveryController implements Initializable {
     @FXML private TableColumn<Prescription, String> patients;
     @FXML private TableColumn<Prescription, String> details;
     @FXML private TableColumn<Prescription, String> locations;
+    @FXML public ImageView image;
 
     private Node main;
 
@@ -39,6 +45,11 @@ public class DeliveryController implements Initializable {
 
     private static Deliverer self = new Deliverer();
 
+    public void setName(String newname) {
+        name.setText(newname);
+        self.setName(name.getText());
+    }
+
     @FXML
     public void setMain(ActionEvent e) {
         border_pane.setCenter(main);
@@ -46,12 +57,12 @@ public class DeliveryController implements Initializable {
 
     @FXML
     public void setAdmin(ActionEvent e) throws IOException {
-        border_pane.setCenter(FXMLLoader.load(Main.class.getResource("/application/view/delivery/admin.fxml")));
+        border_pane.setCenter(FXMLLoader.load(DeliveryMain.class.getResource("/application/view/delivery/admin.fxml")));
     }
 
     @FXML
-    public void setSettings(ActionEvent e) {
-
+    public void setSettings(ActionEvent e) throws IOException {
+        border_pane.setCenter(FXMLLoader.load(DeliveryMain.class.getResource("/application/view/delivery/setting.fxml")));
     }
 
     @Override
@@ -64,6 +75,11 @@ public class DeliveryController implements Initializable {
         locations.setCellValueFactory(new PropertyValueFactory<Prescription, String>("target"));
         table.setItems(data);
         main = content_area;
+        currentOccurence = this;
+    }
+
+    public void setImage(String IMAGE_URL) {
+        image.setImage(new Image(IMAGE_URL));
     }
 
 
@@ -86,15 +102,15 @@ public class DeliveryController implements Initializable {
             yOffset = event.getSceneY();
         });
         border_pane.setOnMouseDragged(event -> {
-            Main.stage.setX(event.getScreenX() - xOffset);
-            Main.stage.setY(event.getScreenY() - yOffset);
-            Main.stage.setOpacity(0.7f);
+            DeliveryMain.stage.setX(event.getScreenX() - xOffset);
+            DeliveryMain.stage.setY(event.getScreenY() - yOffset);
+            DeliveryMain.stage.setOpacity(0.7f);
         });
         border_pane.setOnDragDone((e) -> {
-            Main.stage.setOpacity(1.0f);
+            DeliveryMain.stage.setOpacity(1.0f);
         });
         border_pane.setOnMouseReleased((e) -> {
-            Main.stage.setOpacity(1.0f);
+            DeliveryMain.stage.setOpacity(1.0f);
         });
 
     }

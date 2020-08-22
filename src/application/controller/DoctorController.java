@@ -59,8 +59,8 @@ public class DoctorController implements Initializable {
     @FXML
     private boolean isAddModeEngaged = false;
     public void onAddPatientBtn() {
-        checkIfOtherButtonIsEngaged();
-
+        if (checkIfOtherButtonIsEngaged())
+            return;
 
         patientNameTF.setText(""); patientICTF.setText(""); addressTF.setText("");
         prescriptionNameTF.setText(""); prescriptionDescriptionTF.setText("");
