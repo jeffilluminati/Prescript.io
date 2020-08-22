@@ -6,6 +6,9 @@ import java.util.ResourceBundle;
 import application.model.base.Prescription;
 import application.model.doctor.Doctor;
 import application.model.patient.Patient;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
@@ -30,12 +33,17 @@ public class PatientController implements Initializable {
     public TableColumn<String, Prescription> prescriptionLeft;
     @FXML
     public TableColumn<String, Prescription> prescriptionRight;
+    @FXML
+    public TableView doctorsTable;
+    @FXML
+    public TableColumn<String, String> doctorsLeft;
 
 
 
 
 
-    public void displayPrescriptions(Patient patient, ActionEvent event) {
+    public void displayPrescriptions(ActionEvent event) {
+        Patient patient = Patient.getSelf();
         if (!patient.getPrescriptions().equals(prescriptionTable.getItems())) {
             Prescription p;
             for (int i = 0; i < patient.getPrescriptions().size(); i++) {
@@ -46,15 +54,53 @@ public class PatientController implements Initializable {
 
     }
 
+    public void doctorsButtonAction(ActionEvent event) {
+
+
+        if (!Patient.getSelf().getPrescriptions().equals(doctorsTable.getItems())) {
+            ObservableList<String> nameList = FXCollections.observableArrayList();
+            for (int i = 0; i < Patient.getSelf().getDoctors().size(); i++) {
+                if (!nameList.contains(Patient.getSelf().getDoctors().get(i).getName())) {
+                    nameList.add(Patient.getSelf().getDoctors().get(i).getName());
+                }
+                doctorsTable.setItems(nameList);
+            }
+        }
+        for (var x:doctorsTable.getItems()) {
+            System.out.println(x);
+        }
+        prescriptionButton.setStyle("-fx-background-color: #555566");
+        doctorsButton.setStyle("-fx-background-color:  #BB9955;");
+        prescriptionTable.setVisible(false);
+        updateButton.setVisible(false);
+        doctorsTable.setVisible(true);
+    }
+
+    public void prescriptionButtonAction(ActionEvent event) {
+        prescriptionButton.setStyle("-fx-background-color:  #BB9955;");
+        doctorsButton.setStyle("-fx-background-color: #555566");
+        prescriptionTable.setVisible(true);
+        updateButton.setVisible(true);
+        doctorsTable.setVisible(false);
+        displayPrescriptions(event);
+    }
+
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Patient.self.setDoctorsList();
+        doctorsTable.setVisible(false);
+        doctorsLeft.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue()));
+
         prescriptionLeft.setCellValueFactory(new PropertyValueFactory<>("prescription"));
         prescriptionRight.setCellValueFactory(new PropertyValueFactory<>("docName"));
-        displayPrescriptions(Patient.getSelf(), new ActionEvent());
+        //doctorsLeft.setCellValueFactory(new PropertyValueFactory<>("name"));
+        displayPrescriptions(new ActionEvent());
 
-        updateButton.setOnAction(actionEvent -> displayPrescriptions(Patient.getSelf(), actionEvent));
+        prescriptionButton.setOnAction(actionEvent -> prescriptionButtonAction(actionEvent));
+        updateButton.setOnAction(actionEvent -> displayPrescriptions(actionEvent));
+        doctorsButton.setOnAction(actionEvent -> doctorsButtonAction(actionEvent));
     }
 }

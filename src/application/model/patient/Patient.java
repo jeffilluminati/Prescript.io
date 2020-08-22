@@ -82,6 +82,16 @@ public class Patient extends Stakeholder {
 
      */
 
+    public void setDoctorsList() {
+        Doctor d;
+        for (int i = 0; i < prescriptions.size(); i++) {
+            d = new Doctor(prescriptions.get(i).getDocName());
+            if (!doctors.contains(d)) {
+                doctors.add(d);
+            }
+        }
+    }
+
     public static void setSelf(Patient p) { self = p; }
 
     public static Patient getSelf() { return self; }
