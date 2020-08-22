@@ -11,24 +11,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DoctorController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #444455;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DoctorController">
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Patient Details">
+                <Label text="Patient Details" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
                 <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="481.0">
                     <children>
-                        <Label text="Name: " />
+                        <Label text="Name: " textFill="WHITE" />
                         <TextField fx:id="patientNameTF" editable="false" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="481.0">
                     <children>
-                        <Label text="NRIC: " />
+                        <Label text="NRIC: " textFill="WHITE" />
                         <TextField fx:id="patientICTF" editable="false">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -37,21 +37,21 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="481.0">
                     <children>
-                        <Label text="Address:" />
+                        <Label text="Address:" textFill="WHITE" />
                         <TextField fx:id="addressTF" editable="false" prefHeight="25.0" prefWidth="333.0">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></TextField>
                     </children>
                 </HBox>
-                <Label text="Prescription Details">
+                <Label text="Prescription Details" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
                 <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="481.0">
                     <children>
-                        <Label text="Name:" />
+                        <Label text="Name:" textFill="WHITE" />
                         <TextField fx:id="prescriptionNameTF" editable="false">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -60,7 +60,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="481.0">
                     <children>
-                        <Label text="Description:" />
+                        <Label text="Description:" textFill="WHITE" />
                         <TextField fx:id="prescriptionDescriptionTF" editable="false">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -72,14 +72,14 @@
         </VBox>
     </center>
     <top>
-        <Label text="Doctor" BorderPane.alignment="CENTER">
+        <Label text="Doctor" textFill="WHITE" BorderPane.alignment="CENTER">
             <font>
                 <Font size="33.0" />
             </font>
         </Label>
     </top>
     <bottom>
-        <ButtonBar prefHeight="78.0" prefWidth="580.0">
+        <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="78.0" prefWidth="580.0">
             <buttons>
                 <Button fx:id="addPatientBtn" maxWidth="80.0" mnemonicParsing="false" onAction="#onAddPatientBtn" text="Add Patient">
                     <font>
