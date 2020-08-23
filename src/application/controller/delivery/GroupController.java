@@ -55,12 +55,13 @@ public class GroupController implements Initializable {
             VBox.setVgrow(table, Priority.ALWAYS);
         }
     }
-}
+    private static class SortByRegion implements Comparator<Prescription> {
 
-class SortByRegion implements Comparator<Prescription> {
-
-    @Override
-    public int compare(Prescription o1, Prescription o2) {
-        return o1.getTarget().compareTo(o2.getTarget());
+        @Override
+        public int compare(Prescription o1, Prescription o2) {
+            return o1.getTarget().compareTo(o2.getTarget());
+        }
     }
 }
+
+
