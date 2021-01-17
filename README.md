@@ -1,7 +1,9 @@
 # Prescript.io: A Prescription Medication Delivery Management System
 Created by: Joshua Cheong, Mayukh Das and Prannaya Gupta
 
-![Prescript.io](https://raw.githubusercontent.com/jeffilluminati/NUSHHackathonProject/master/src/resources/images/icons/icon.png?token=AMEKUNIBXZCBZPYDICR5ZF27JHSQE)
+<p align="center">
+   <img src="https://raw.githubusercontent.com/jeffilluminati/NUSHHackathonProject/master/src/resources/images/icons/icon.png?token=AMEKUNIBXZCBZPYDICR5ZF27JHSQE" alt="Prescript.io" width="400">
+</p>
 
 ## What exactly is Prescript.io?
 - A Destop application which serves as a Hospital Prescription medication delivery management system. 
